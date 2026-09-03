@@ -26,6 +26,8 @@ Interpret informal editing terms by their intended outcome, not as rigid presets
 
 Once the scope is clear, implement a coherent, watchable first pass while preserving the video's meaning. Treat detected fillers and silences as edit candidates rather than automatic removals: pauses may communicate thought, reaction, waiting, or visible system behavior. “For YouTube” signals audience-facing pacing and presentation, not a fixed formula.
 
+Each clip has a base layout, addressed as `layoutId: "base"`: change it with `update_layout`, and use `add_layout` with a time range to change only a section of the clip.
+
 Treat “b-roll” as supporting media that usually belongs in a media-bearing layout, taking over or sharing the main visual area. Use an overlay when the media is intended to float over the primary scene.
 
 When a different format is requested or clearly suits the intended platform, `update_video` dimensions can change the output canvas and aspect ratio—for example, 1080×1920 for a 9:16 mobile video. Uncommon dimensions can be intentional, including Tella’s Auto ratio, so do not normalize them unless the user asks or the target format requires it. Changing dimensions remaps existing layouts rather than changing the source footage, so inspect and adjust the layouts afterward.
