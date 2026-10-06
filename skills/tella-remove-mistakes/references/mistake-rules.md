@@ -1,6 +1,6 @@
 # Mistake rules
 
-These are the rules Tella's **Find mistakes** feature uses to find recording mistakes in a word-level transcript. Apply them to the transcript from `get_transcript` and express each finding as an inclusive word-index range.
+These are the rules for finding recording mistakes in a word-level transcript. Apply them to the transcript from `get_transcript` and express each finding as an inclusive word-index range.
 
 ## Mistake types
 

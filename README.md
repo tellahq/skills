@@ -18,6 +18,6 @@ Analyze, edit, and visually verify Tella videos through the [Tella MCP server](h
 
 ### `tella-remove-mistakes`
 
-Find recording mistakes in a Tella video (false starts, retakes, repeated phrases, abandoned sentences, technical interruptions), review them with you, and cut the approved ones through the Tella MCP. Uses the same rules as the editor's **Find mistakes** button.
+Find recording mistakes in a Tella video (false starts, retakes, repeated phrases, abandoned sentences, technical interruptions), review them with you, and cut the approved ones through the Tella MCP.
 
 > Example prompt: `/tella-remove-mistakes Clean up the retakes in my latest video`
