@@ -27,3 +27,9 @@ Find recording mistakes in a Tella video (false starts, retakes, repeated phrase
 Lay out a Tella clip automatically: pick a base layout, then add layout changes (screen focus, camera cutaways, punch-ins, bubble size changes) only where they help the viewer, keeping the clip's camera style and pop-out.
 
 > Example prompt: `/tella-auto-layouts Lay out my latest video as a product demo`
+
+### `tella-auto-cut`
+
+Tighten a Tella video in one go: cut recording mistakes, filler words and silent pauses, then clean up the gaps and broken seams the cuts leave behind.
+
+> Example prompt: `/tella-auto-cut Tighten up my latest video`
