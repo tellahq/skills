@@ -26,7 +26,7 @@ Interpret informal editing terms by their intended outcome, not as rigid presets
 
 Once the scope is clear, implement a coherent, watchable first pass while preserving the video's meaning. Treat detected fillers and silences as edit candidates rather than automatic removals: pauses may communicate thought, reaction, waiting, or visible system behavior. To find and remove retakes, false starts, and other recording mistakes, use the `tella-remove-mistakes` skill. “For YouTube” signals audience-facing pacing and presentation, not a fixed formula.
 
-Each clip has a base layout, addressed as `layoutId: "base"`: change it with `update_layout`, and use `add_layout` with a time range to change only a section of the clip.
+Each clip has a base layout, addressed as `layoutId: "base"`: change it with `update_layout`, and use `add_layout` with a time range to change only a section of the clip. Users name layouts by the editor's picker labels, such as “Split Right Overlap”; use the kind and style the tool descriptions give for that label, not the nearest default variant. To lay out a clip automatically, use the `tella-auto-layouts` skill.
 
 Treat “b-roll” as supporting media that usually belongs in a media-bearing layout, taking over or sharing the main visual area. Use an overlay when the media is intended to float over the primary scene.
 
