@@ -1,6 +1,6 @@
 ---
 name: tella-auto-layouts
-description: Lay out a Tella clip automatically through the Tella MCP. Picks a base layout and adds timed layout changes (screen focus, camera cutaways, bubble size changes, punch-ins) where they help the viewer, keeping the clip's camera style and pop-out. Use when asked for auto layouts, to lay out or re-layout a clip, or to make a screen-and-camera recording more dynamic.
+description: Lay out a Tella clip automatically through the Tella MCP. Picks a base layout and adds timed layout changes (screen focus, camera cutaways, bubble size changes, punch-ins) where they help the viewer, keeping the clip's camera style and pop-out and preferring the user's Favorite layouts. Use when asked for auto layouts, to lay out or re-layout a clip, or to make a screen-and-camera recording more dynamic.
 ---
 
 # Auto layouts for a Tella clip
@@ -19,10 +19,10 @@ If the user names a style (product demo, tutorial, presentation, intro/outro onl
 
 ## Workflow
 
-1. **Read the clip.** `get_timeline` gives the clip's id, playback duration and `layoutSceneType`. `list_layouts` gives its base layout (with `cameraStyle`, `popOut` and `crop`) and its sections. Sections with `followsBase: true` just show the base layout; the others are the current layout changes. The base layout's look is the user's choice: keep its camera style, pop-out, camera shape and crop unless the user asked for a different look.
+1. **Read the clip.** `get_timeline` gives the clip's id, playback duration and `layoutSceneType`. `list_layouts` gives its base layout (with `cameraStyle`, `popOut` and `crop`) and its sections. Sections with `followsBase: true` just show the base layout; the others are the current layout changes. The base layout's look is the user's choice: keep its camera style, pop-out, camera shape and crop unless the user asked for a different look. `list_saved_layouts` gives the user's Favorite layouts; only those whose `sceneType` matches the clip's `layoutSceneType` (and, for custom ones, whose `canvasRatio` matches the video) can be used here.
 2. **Understand what happens.** `get_transcript` for what is said and when. `get_mouse_events` with `types: ["clicks"]` shows where the screen is being operated. `get_storyboard` on the clip shows what is on screen and when it changes: cover the clip in windows (80 seconds by default, wider for long clips), then narrow down where something changes. Look at a `get_clip_frame` to see which way the speaker faces and what the camera covers. A rendered frame shows the camera as the viewer sees it, mirroring included.
 3. **Decide the edit** using the guidance below: the base layout, then a short list of moments that deserve a change, each with a reason.
-4. **Apply it in one `apply_video_edits` call**: `remove_layout` for each old layout change, `update_layout` on `base` if the base should change, then one `add_layout` per change. Give every change that frames the camera the base's `cameraStyle` and `popOut`, because a new layout doesn't inherit them. `apply_video_edits` can't set a crop, so a base with its own crop needs one more step: run `list_layouts` after the batch and, for each new layout that shows the screen and reports a different `crop` from the base, call `update_layout` with the base's `crop`. Times are ms on the clip's playback timeline, the same as the transcript; each change is at least 200 ms long.
+4. **Apply it.** If the base becomes a favorite, `apply_saved_layout` without a range first. Then one `apply_video_edits` call: `remove_layout` for each old layout change, `update_layout` on `base` if the base should change, then one `add_layout` per change. Give every change that frames the camera the base's `cameraStyle` and `popOut`, because a new layout doesn't inherit them. `apply_video_edits` can't set a crop, so a base with its own crop needs one more step: run `list_layouts` after the batch and, for each new layout that shows the screen and reports a different `crop` from the base, call `update_layout` with the base's `crop`. Changes that use a favorite can't go in the batch: apply each with `apply_saved_layout` and a range afterwards, then give it the base's `cameraStyle`, `popOut` and `crop` with `update_layout` where they differ. A custom favorite (`kind: custom` in `list_layouts`) rejects `cameraStyle`: set the camera's shape with `layout: {kind: "custom", presentation: {shape}}` instead, which keeps its geometry (the shape takes the same value as the base's `cameraStyle`), and send its `crop` in a separate `update_layout`. Times are ms on the clip's playback timeline, the same as the transcript; each change is at least 200 ms long.
 5. **Check it.** Using that `list_layouts`, run `get_clip_frame` in the middle of the base layout and of the changes that matter most. Fix any camera that covers text, a cursor, a menu or a result, and any change that landed on the wrong words.
 6. **Report** in a few lines: the base layout, each change with its time and why, and anything you left alone on purpose.
 
@@ -41,6 +41,7 @@ The base layout is the home shot and carries most of the clip. Pick it for the c
 - Screen-led demos and tutorials: `camera-bubble` at size M, in the corner that covers the least.
 - Talks, pitches and recaps where the speaker matters as much as the slides: `side-by-side` (`overlap` or `regular`) or `tv-presenter`.
 - If the clip already has a deliberate base layout (a camera style, a pop-out, a cut-out presenter, a custom layout), keep it and only add changes.
+- Otherwise, if the user has a Favorite layout that suits the clip's base, use it rather than a default: favorites are the user's own look.
 
 ### Layout changes
 
@@ -53,6 +54,8 @@ Useful changes, in the MCP's vocabulary (the `add_layout` schema lists what each
 - **Punch-in** (`camera-only` with `punchIn: true`): the strongest words of a cutaway or an opening hook. At least 1.5 s, ideally 2–4 s.
 - **Bubble size accent** (the same `camera-bubble` at size L, then back to the base): commentary or a reaction while the screen still matters.
 - **Split or presenter** (`side-by-side`, `tv-presenter`): a stretch where both the speaker and a slide or page matter. Avoid them for small text or code.
+
+Where a usable favorite does the same job as one of these (a screen-led favorite for screen focus, a camera-led one for a cutaway), prefer the favorite.
 
 The opening: if the first sentence greets or sets up without needing the screen, a short camera opening works well. If it already refers to something on screen, the screen must be visible from the first frame.
 
