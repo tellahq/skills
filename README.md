@@ -21,3 +21,9 @@ Analyze, edit, and visually verify Tella videos through the [Tella MCP server](h
 Find recording mistakes in a Tella video (false starts, retakes, repeated phrases, abandoned sentences, technical interruptions), review them with you, and cut the approved ones through the Tella MCP.
 
 > Example prompt: `/tella-remove-mistakes Clean up the retakes in my latest video`
+
+### `tella-auto-layouts`
+
+Lay out a Tella clip automatically: pick a base layout, then add layout changes (screen focus, camera cutaways, punch-ins, bubble size changes) only where they help the viewer, keeping the clip's camera style and pop-out.
+
+> Example prompt: `/tella-auto-layouts Lay out my latest video as a product demo`
