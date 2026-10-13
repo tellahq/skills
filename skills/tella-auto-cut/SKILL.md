@@ -43,7 +43,7 @@ Mistakes go first because they are the step that needs reading. The other steps 
    Fix these with `cut_clip_by_transcript` on the word indices. Never split a word or pad a range with extra words.
 
    Cuts only remove words: a word that is already cut is absent from the transcript and no further cut brings it back. If a mistake cut took too much (the sentence lost a word it needs), restore the clip's saved cuts with `update_clip` (see Restoring), redo steps 1–3 with the corrected mistake range, and run the final pass again on the new transcript.
-4. **Listen to a few seams** with `get_clip_preview`, picking the ones with the most cuts close together. A word that ends right at a cut can sound clipped. If the word isn't needed, cut it whole; if it is, restore and redo as above with that cut one word smaller. Never adjust a cut by milliseconds.
+4. **Listen to every seam** in one batch, not a sample. Word end times are sometimes early, so a cut can clip a word that looks whole in the transcript. Take each changed range from `get_clip_preview`, starting a second or two before its seam, join them all into one file and listen once. At each seam, check the words on both sides are whole. A word you heard cut off is clipped even if `get_audio_levels` looks fine: levels show only what still plays, so speech running right up to the seam is what a clipped word looks like. If the word isn't needed, cut it whole; if it is, restore and redo as above with that cut one word smaller. Never adjust a cut by milliseconds.
 
 Run the final pass once (twice for a clip you had to restore), then report anything you saw but left alone.
 
