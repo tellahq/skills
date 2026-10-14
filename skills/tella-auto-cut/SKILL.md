@@ -25,7 +25,7 @@ Work clip by clip; transcripts, word indices and cuts are all per clip. `get_tim
 2. **Fillers.** `remove_fillers` on each clip.
 3. **Silences.** `remove_silences` on each clip with the chosen `mode`. If it answers that the audio analysis is still processing, wait a little and try again, at most a few times; if it still isn't ready, skip silences for that clip, do the final pass anyway and say so in the report.
 4. **Final pass.** See below.
-5. **Report** per clip: the mistakes cut (time, reason, words), that fillers and silences were removed, the gaps and seams the final pass fixed, and the clip's length before and after. Say how to restore (below).
+5. **Report** per clip: the mistakes cut (time, reason, words), that fillers and silences were removed, the gaps and seams the final pass fixed and what the listen heard, and the clip's length before and after. Say how to restore (below).
 
 Mistakes go first because they are the step that needs reading. The other steps don't depend on order: word indices never shift, and `remove_silences` works from the original recording.
 
@@ -44,6 +44,8 @@ Mistakes go first because they are the step that needs reading. The other steps 
 
    Cuts only remove words: a word that is already cut is absent from the transcript and no further cut brings it back. If a mistake cut took too much (the sentence lost a word it needs), restore the clip's saved cuts with `update_clip` (see Restoring), redo steps 1–3 with the corrected mistake range, and run the final pass again on the new transcript.
 4. **Listen to every seam** in one batch, not a sample. Word end times are sometimes early, so a cut can clip a word that looks whole in the transcript. Take each changed range from `get_clip_preview`, starting a second or two before its seam, join them all into one file and listen once. At each seam, check the words on both sides are whole. A word you heard cut off is clipped even if `get_audio_levels` looks fine: levels show only what still plays, so speech running right up to the seam is what a clipped word looks like. If the word isn't needed, cut it whole; if it is, restore and redo as above with that cut one word smaller. Never adjust a cut by milliseconds.
+
+   The listen is part of the cut, not an extra. If it didn't happen (you have no way to hear audio, a preview or listen failed), the cut is unverified: say so first in the report, with the reason, rather than asking the user to check the seams.
 
 Run the final pass once (twice for a clip you had to restore), then report anything you saw but left alone.
 
