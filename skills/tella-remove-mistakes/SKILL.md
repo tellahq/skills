@@ -11,7 +11,7 @@ This skill needs the Tella MCP. If tools such as `get_transcript` are missing, f
 
 ## Scope
 
-Mistakes are not filler words or silences. For standalone "um"/"uh", use `remove_fillers`; for pauses, use `get_silences` / `remove_silences`. Only do those if the user asked for them too.
+Mistakes are not filler words or silences. For standalone "um"/"uh", use `remove_fillers`; for pauses, use `get_silences` / `remove_silences`. Only do those if the user asked for them too, and on each clip send them only after its `cut_clip_by_transcript` call has returned: calls on the same clip that run together each return the clip as they saw it, so one result can be missing the other's cuts.
 
 Finding mistakes is read-only. Do not cut anything until the user has approved the list, unless they explicitly asked you to remove the mistakes without reviewing.
 
@@ -26,6 +26,6 @@ Finding mistakes is read-only. Do not cut anything until the user has approved t
 6. **Check the seams.** Re-read the transcript around each cut. Look at the gap between the last word before the cut and the first word after it. A word that ends right at the cut, especially one ending in a consonant, can sound clipped; if a seam sounds wrong in `get_clip_preview`, move the cut by a whole word rather than adjusting milliseconds. Confirm the sentence now reads as intended.
 7. **Report** what was cut per clip, what you left in on purpose, and what you verified (transcript re-read, previews watched).
 
-If a cut call fails or its outcome is unclear, re-read the transcript before retrying: words that were cut are absent from it. Never blindly repeat a cut.
+A cut call that returned the clip succeeded; don't send it again, even when a later result seems to lack its cuts. If a cut call fails or its outcome is unclear, re-read the transcript before retrying: words that were cut are absent from it. When `cut_clip_by_transcript` reports word indices not found, those words are already cut: drop those ranges and send the rest once. Never blindly repeat a cut.
 
 To undo, `get_clip` shows the clip's cuts and `update_clip` with `cuts: []` restores the whole clip and you can then re-apply the cuts you want to keep. Prefer that to guessing at a partial undo.
