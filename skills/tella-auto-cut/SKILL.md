@@ -21,13 +21,15 @@ Don't change layouts, zooms, overlays or captions.
 
 Work clip by clip; transcripts, word indices and cuts are all per clip. `get_timeline` lists the clips. Before cutting, call `get_clip` on each one and keep its `cuts`, so you can say how to restore it.
 
+On a clip, run the steps one at a time: send a step's call only after the previous call on that clip has returned. Calls on the same clip that run together each return the clip as they saw it, so one call's result can be missing the other's cuts even though both landed.
+
 1. **Mistakes.** Follow steps 1–3 and 5 of the `tella-remove-mistakes` skill, with its rules in [../tella-remove-mistakes/references/mistake-rules.md](../tella-remove-mistakes/references/mistake-rules.md): read the transcript, find the mistakes, and cut them with one `cut_clip_by_transcript` call per clip. Skip its review step (step 4). Its rule still holds: when unsure, leave it in.
 2. **Fillers.** `remove_fillers` on each clip.
 3. **Silences.** `remove_silences` on each clip with the chosen `mode`. If it answers that the audio analysis is still processing, wait a little and try again, at most a few times; if it still isn't ready, skip silences for that clip, do the final pass anyway and say so in the report.
 4. **Final pass.** See below.
 5. **Report** per clip: the mistakes cut (time, reason, words), that fillers and silences were removed, the gaps and seams the final pass fixed, and the clip's length before and after. Say how to restore (below).
 
-Mistakes go first because they are the step that needs reading. The other steps don't depend on order: word indices never shift, and `remove_silences` works from the original recording.
+Mistakes go first because they are the step that needs reading. Fillers and silences can follow in either order: word indices never shift, and `remove_silences` works from the original recording.
 
 ## Final pass
 
@@ -51,4 +53,4 @@ Run the final pass once (twice for a clip you had to restore), then report anyth
 
 A single cut can't be undone cleanly: a mistake cut merges with the filler and silence cuts next to it. To restore a clip, call `update_clip` with the `cuts` you saved from `get_clip` before starting (or `cuts: []` to remove every cut, including ones the clip had before). To redo with different choices, restore and run again.
 
-If a cut call fails or its outcome is unclear, re-read the transcript before retrying: words that were cut are absent from it. Never blindly repeat a cut.
+A cut call that returned the clip succeeded; don't send it again, even when a later result seems to lack its cuts. If a cut call fails or its outcome is unclear, re-read the transcript before retrying: words that were cut are absent from it. When `cut_clip_by_transcript` reports word indices not found, those words are already cut: drop those ranges and send the rest once. Never blindly repeat a cut.
