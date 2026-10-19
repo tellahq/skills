@@ -33,3 +33,9 @@ Lay out a Tella clip automatically: pick a base layout, then add layout changes 
 Tighten a Tella video in one go: cut recording mistakes, filler words and silent pauses, then clean up the gaps and broken seams the cuts leave behind.
 
 > Example prompt: `/tella-auto-cut Tighten up my latest video`
+
+### `tella-polish-demo`
+
+Polish a screen demo so it looks produced: motion blur, a bigger cursor, adaptive zooms that frame each burst of clicks and pan between them, and a background that matches the product's colours. Made for Auto Capture takes.
+
+> Example prompt: `/tella-polish-demo Polish my latest Auto Capture video`
