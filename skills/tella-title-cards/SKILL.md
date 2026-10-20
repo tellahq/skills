@@ -1,6 +1,6 @@
 ---
 name: tella-title-cards
-description: Design a matching set of title graphics for a Tella video through the Tella MCP: an opening title, chapter titles at each topic change, name tags (lower thirds) for people, and an end card, all from one design. Use when asked for titles, an intro or outro title, chapter cards, section headers, lower thirds, name tags or an end card. Builds on tella-motion-design. Simple titles use text overlays; designed cards use Tella's freeform tools, which are in beta and not available in every workspace.
+description: Design a matching set of title graphics for a Tella video through the Tella MCP, covering an opening title, chapter titles at each topic change, name tags (lower thirds) for people, and an end card, all from one design. Use when asked for titles, an intro or outro title, chapter cards, section headers, lower thirds, name tags or an end card. Builds on tella-motion-design. Simple titles use text overlays; designed cards use Tella's freeform tools, which are in beta and not available in every workspace.
 ---
 
 # Title cards for a Tella video

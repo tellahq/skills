@@ -1,6 +1,6 @@
 ---
 name: tella-motion-design
-description: The shared rules for motion graphics in a Tella video, used through the Tella MCP: one look per video, graphics timed to the spoken word, placement clear of the speaker, and checking the result. Load it whenever you add text, titles or animated graphics to a video, including a general request to add motion graphics, and before tella-kinetic-type, tella-title-cards, tella-explainer-graphics, tella-data-callouts or tella-screen-callouts. Text overlays work everywhere; richer graphics use Tella's freeform tools, which are in beta and not available in every workspace.
+description: The shared rules for motion graphics in a Tella video, used through the Tella MCP, covering one look per video, graphics timed to the spoken word, placement clear of the speaker, and checking the result. Load it whenever you add text, titles or animated graphics to a video, including a general request to add motion graphics, and before tella-kinetic-type, tella-title-cards, tella-explainer-graphics, tella-data-callouts or tella-screen-callouts. Text overlays work everywhere; richer graphics use Tella's freeform tools, which are in beta and not available in every workspace.
 ---
 
 # Motion design for Tella videos

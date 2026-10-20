@@ -1,6 +1,6 @@
 ---
 name: tella-kinetic-type
-description: Add kinetic typography to a Tella video through the Tella MCP: the lines that matter, set as animated text that lands on the spoken word. Use when asked for kinetic type, animated text, text callouts, keyword pop-ups, or to make a talking video more dynamic with type. Builds on tella-motion-design. Most styles use text overlays; the full-frame hook and richer type use Tella's freeform tools, which are in beta and not available in every workspace.
+description: Add kinetic typography to a Tella video through the Tella MCP, setting the lines that matter set as animated text that lands on the spoken word. Use when asked for kinetic type, animated text, text callouts, keyword pop-ups, or to make a talking video more dynamic with type. Builds on tella-motion-design. Most styles use text overlays; the full-frame hook and richer type use Tella's freeform tools, which are in beta and not available in every workspace.
 ---
 
 # Kinetic type for a Tella video
