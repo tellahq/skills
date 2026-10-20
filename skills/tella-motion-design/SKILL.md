@@ -19,7 +19,7 @@ For a general request ("add some motion graphics"), go through the video stretch
 
 ## One look
 
-Decide the look before building and keep to it: one typeface (reuse the video's text presets or existing overlays when it has them), a few colours with one accent, one size per kind of graphic so the hierarchy reads, and one calm easing. No bouncy, elastic or spring easing. Every graphic has an exit. Check contrast against what is really behind the text, and don't add shadows or outlines it doesn't need.
+Decide the look before building and keep to it: one typeface (reuse the video's text presets or existing overlays when it has them), a few colours with one accent, and a clear hierarchy: the key word or number large and in the accent, supporting text smaller and plainer, the same size for the same role every time. One calm easing. No bouncy, elastic or spring easing. Every graphic has an exit. Check contrast against what is really behind the text, and don't add shadows or outlines it doesn't need.
 
 ## Timing
 
@@ -27,7 +27,7 @@ Place each graphic from the transcript's word timings, not its sentences. Nothin
 
 ## Words
 
-Use the speaker's words, shortened only when the short form keeps the meaning, including any condition ("retried within an hour", not "auto retry"). Never add a claim, number, name or link the video doesn't give; check against the transcript and the video's title.
+A graphic is a headline, not a caption: at most seven words on screen, usually one to four. Never put a whole spoken sentence on screen. Use the speaker's words, shortened only when the short form keeps the meaning, including any condition ("retried within an hour", not "auto retry"). Never add a claim, number, name or link the video doesn't give; check against the transcript and the video's title.
 
 ## Placement
 

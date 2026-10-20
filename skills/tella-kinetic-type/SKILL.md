@@ -11,7 +11,7 @@ This skill needs the Tella MCP. If tools such as `get_timeline` are missing, fol
 
 ## What to type out
 
-The lines a viewer should remember: the hook or opening question, a claim the speaker stresses, a list as it is counted off, a number that matters, the takeaway, and the call to action with its link exactly as said. Choose how many from the video and the request; don't pad a sparse video, and don't skip a strong moment to keep the count down. Word-by-word captions are the subtitles feature, not this skill.
+The lines a viewer should remember, each cut to its key phrase: the hook or opening question, the speaker's name and role when they introduce themselves, a claim the speaker stresses, a list as it is counted off, a number that matters, the takeaway, and the call to action with its link exactly as said. Choose how many from the video and the request; don't pad a sparse video, and don't skip a strong moment to keep the count down. Word-by-word captions are the subtitles feature, not this skill.
 
 ## Styles
 

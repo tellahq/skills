@@ -11,6 +11,7 @@ This skill needs the Tella MCP. If tools such as `get_timeline` are missing, fol
 
 - **Accuracy first.** Show each number exactly as said, with its unit and sign ("3 days → 4 hours", not "3 → 4"). Never invent data: one number said means one number shown, not a chart with made-up neighbours. Draw bars and blocks to scale from zero.
 - **On the number.** A figure appears when it is spoken, never earlier. Figures said together ("200 shops in 12 cities") build up in one callout as each is said, rather than swapping cards.
-- **Pick the treatment for the figure**: a big stat with a short label for a single number, two bars or blocks for a before and after, a ring or bar for a percentage, a count-up only for a total or growth that deserves it.
+- **Number first.** The number is the largest thing in the callout, in the accent colour, with a short label of what it measures (a few words) smaller beneath it.
+- **Pick the treatment for the figure**: a big stat with its label for a single number, two bars or blocks for a before and after, a ring or bar for a percentage, a count-up only for a total or growth that deserves it.
 
 Check a frame of every callout at its final value against the transcript, and report each with the line it comes from.

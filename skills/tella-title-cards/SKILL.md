@@ -9,9 +9,9 @@ Give the video one family of titles that look related but clearly ranked, so the
 
 This skill needs the Tella MCP. If tools such as `get_timeline` are missing, follow the connection steps in the `tella` skill first.
 
-- **Opening title**: the video's title (`get_video`) or the speaker's own framing, over the opening while it is being said. The largest size.
-- **Chapter titles**: one per real topic change, entering as the new topic starts. Use the video's chapters when it has them. Mid size, numbered when the video is a sequence of steps.
+- **Opening title**: the video's title (`get_video`) or the speaker's own framing, on screen from the start of the video. The largest size.
+- **Chapter titles**: one for every section, the last one included, entering as the new topic starts. Use the video's chapters when it has them. Mid size, numbered when the video is a sequence of steps.
 - **Name tags**: a person's name and role the first time they appear, only as the video says them. The smallest size.
 - **End card**: the takeaway or the next step the speaker gives, with any link exactly as said. Large, like the opening title.
 
-All of them sit in the empty part of the frame, never over the speaker or the content being shown, on one grid. Design one of each kind, check it, then reuse it (a saved text preset, or a duplicated freeform document) for the rest. Titles go over the existing footage; add a separate title clip only when the user asks.
+Each kind has one style and one position throughout. Make only what was asked; no extra quote cards. All of them sit in the empty part of the frame, never over the speaker or the content being shown, on one grid. Design one of each kind, check it, then reuse it (a saved text preset, or a duplicated freeform document) for the rest. Titles go over the existing footage; add a separate title clip only when the user asks.
