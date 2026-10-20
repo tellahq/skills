@@ -28,6 +28,8 @@ Once the scope is clear, implement a coherent, watchable first pass while preser
 
 Each clip has a base layout, addressed as `layoutId: "base"`: change it with `update_layout`, and use `add_layout` with a time range to change only a section of the clip. Users name layouts by the editor's picker labels, such as “Split Right Overlap”; use the kind and style the tool descriptions give for that label, not the nearest default variant. To lay out a clip automatically, use the `tella-auto-layouts` skill.
 
+For motion graphics (animated text, titles, diagrams, number callouts, screen annotations), load the `tella-motion-design` skill for the shared rules, then the skill for the graphic: `tella-kinetic-type`, `tella-title-cards`, `tella-explainer-graphics`, `tella-data-callouts` or `tella-screen-callouts`.
+
 Treat “b-roll” as supporting media that usually belongs in a media-bearing layout, taking over or sharing the main visual area. Use an overlay when the media is intended to float over the primary scene.
 
 When a different format is requested or clearly suits the intended platform, `update_video` dimensions can change the output canvas and aspect ratio—for example, 1080×1920 for a 9:16 mobile video. Uncommon dimensions can be intentional, including Tella’s Auto ratio, so do not normalize them unless the user asks or the target format requires it. Changing dimensions remaps existing layouts rather than changing the source footage, so inspect and adjust the layouts afterward.
