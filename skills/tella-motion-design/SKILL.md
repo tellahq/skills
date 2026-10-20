@@ -56,7 +56,7 @@ Particle bursts, glows, lens flares, camera shake, RGB split, crossfades between
 ## Workflow
 
 1. **Read the video.** `get_timeline`, `get_transcript` with word timings, `get_storyboard` for what is on screen, `get_camera_faces` or a `get_clip_frame` for where the speaker is, and the existing overlays (`list_text_overlays`, `list_overlays`) and presets.
-2. **Plan.** Write the look in one line, then each graphic as a row: its time (`m:ss`), its words, its treatment and where it goes. Show the plan and ask the user to approve or adjust it, unless they asked you to just do it. Keep the plan short; it is not a design document.
+2. **Plan.** Write the look in one line, then each graphic as a row: its time (`m:ss`), its words, its treatment and where it goes. Show the plan, then build it without asking again; the user can undo or ask for changes. Keep the plan short; it is not a design document.
 3. **Build** the first graphic of each kind and check it (step 4) before making the rest.
 4. **Check.** For each graphic, run `get_clip_frame` just after it has entered, in the middle, and just before it leaves. Watch the first of each kind, and anything that moves a lot, with `get_clip_preview`. Fix overlaps, cut-off or crowded text, a covered face, cursor or subject, weak contrast, and any graphic that lands on the wrong word.
 5. **Report** in a few lines: the look, each graphic with its time, what you checked, and anything left uncertain.
