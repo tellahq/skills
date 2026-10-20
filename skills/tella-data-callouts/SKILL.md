@@ -17,7 +17,7 @@ Show a short plan: each number with its time, the exact figure and unit, and the
 
 ## Accuracy comes first
 
-- Show the number exactly as the speaker says it, with its unit and sign ("3×", "$40k", "−18%", "2.4 seconds"). Don't round, convert or combine figures.
+- Show the number exactly as the speaker says it, with its unit and sign ("3×", "$40k", "−18%", "2.4 seconds"). Don't round or convert figures, and give each its unit ("40 min → 15 min", not "40 → 15").
 - If the transcript is unsure of a number, compare it with what is on screen, and ask the user when they still disagree.
 - Never invent data. A chart only shows values the video gives: if the speaker gives one number, show one number, not a chart with made-up neighbours. Bars are drawn to scale from zero.
 - The label says what the number measures, in the speaker's terms ("faster builds", "fewer tickets"), in at most four words.
@@ -26,11 +26,12 @@ Show a short plan: each number with its time, the exact figure and unit, and the
 
 - **Big stat:** the number very large in the accent colour, the label small beneath. The default for a single figure. A text overlay works: the number and the label as two overlays, with the label entering 100 ms after the number.
 - **Count-up:** the number counts up to its value and lands as the speaker says it, over 0.6–1.2 s with an ease-out, so it slows into the final value. Freeform has no counting text yet, so build it as a short sequence of titles: 8–12 values on an ease-out schedule, then the final value held. Keep the width steady with the same number of digits, or right-align the numbers so they don't jitter. Use it for growth and totals, not for every number.
-- **Comparison:** before and after, or us and them, as two bars or two blocks drawn to scale, side by side. The first is neutral and the second is in the accent colour and grows on its word. Name both.
+- **Comparison:** before and after, or us and them, as two bars or two blocks drawn to scale, side by side. The first is neutral (with clear contrast against the background) and the second is in the accent colour. Each bar grows from zero on its own number's word: animate its length from its base, not a slide in. Name both.
 - **Percentage:** a ring or a bar filling to the value, the number in its centre or at its end.
-- **Several figures in a row:** when the speaker lists results, show them one after another in the same spot, each replacing the last, or as a row that builds. Never all at once before they are said.
+- **Several figures in one sentence** ("1,200 researchers in 30 countries"): one callout that builds, each figure entering on its word, held together until the sentence ends. Don't swap cards faster than every 2 s.
+- **Figures in a run of sentences:** one after another in the same spot, each held at least 2 s. Never one before it is said.
 
-Place callouts on the empty side of the frame, or as b-roll (`add_layout` with freeform `media`) when the figure is the main point of the moment. Keep them on screen until the speaker moves on, and at least 1.5 s.
+Place callouts on the empty side of the frame, or as b-roll (`add_layout` with freeform `media`) when the figure is the main point of the moment. Keep them on screen until the speaker moves on, and at least 2 s. Every callout leaves with an exit animation, including each node of a freeform callout.
 
 ## Build it
 

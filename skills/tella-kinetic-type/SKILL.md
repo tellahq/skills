@@ -23,9 +23,11 @@ Read the transcript and pick the lines a viewer should remember:
 - a claim the speaker stresses, by repeating it, pausing before it or leaning on it
 - a term being defined, a name being introduced
 - items of a list as they are said ("three things…", "first… second…")
+- a number that matters, as it is said
 - a punchline or the takeaway
+- the call to action, with its URL or handle exactly as said
 
-Use a short form of the line, one to four words where possible. Skip filler, hedges and anything the screen already shows. A minute of talking usually has two to four moments worth typing out. Fewer is fine.
+Always consider the opening line and the call to action: they are the two lines viewers most need to remember. Use a short form of each line that keeps its meaning (see `tella-motion-design`), one to four words where possible. Skip filler, hedges and anything the screen already shows. A minute of talking usually has two to four moments worth typing out; leave screen demos to `tella-screen-callouts`.
 
 ## Styles
 
@@ -33,11 +35,11 @@ Use one or two styles per video. The default for a talking video is emphasis wor
 
 ### Emphasis words
 
-One to four words beside the speaker, on the empty side of the frame (the side they face away from, or the side with less going on). A text overlay with `textIntro` by word: preset `blur_slide_up` or `slide_up`, `durationMs` about 400, an ease-out curve, and `text.delayMs` close to the gap between those words in the transcript (usually 120–250 ms), so the words arrive as they are said. Leave with a short whole-overlay `outro` fade or slide of about 250 ms. The accent colour goes on the one word that matters, and only when the line has one: use a second overlay for it, or freeform for mixed colours.
+One to four words beside the speaker, on the empty side of the frame (the side they face away from, or the side with less going on). A text overlay with `textIntro` by word: preset `blur_slide_up` or `slide_up`, `durationMs` about 400, an ease-out curve, and `text.delayMs` close to the gap between those words in the transcript (usually 120–250 ms), so the words arrive as they are said; if the words are spread out, start the overlay at the key word instead. Leave with a short whole-overlay `outro` fade or slide of about 250 ms. The accent colour goes on the one word that matters, and only when the line has one: use a second overlay for it, or freeform for mixed colours.
 
 ### List build
 
-When the speaker counts things off, each item appears as it is said, stacked in a column in the same spot, with the number or a short marker first. With text overlays, each item is its own overlay, starting on its word and all ending together after the last item has been read. Line them up on one left edge and an even spacing. To make earlier items step back (dimmed to about 40%) when the next one arrives, build the list in freeform, where the dimming is an opacity keyframe.
+When the speaker counts things off, each item appears as it is said, stacked in a column in the same spot, with the number or a short marker first. With text overlays, each item is its own overlay, starting on its word and all ending together when the last item's sentence ends. Line them up on one left edge and an even spacing, in one size. Keep each item to two to four words that carry the item's point. To make earlier items step back (dimmed to about 40%) when the next one arrives, build the list in freeform, where the dimming is an opacity keyframe.
 
 ### Titles behind the presenter
 

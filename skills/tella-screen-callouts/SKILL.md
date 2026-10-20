@@ -1,6 +1,6 @@
 ---
 name: tella-screen-callouts
-description: Point at things in a Tella screen recording with animated callouts, through the Tella MCP. Covers a spotlight on a region, labels with arrows to a button or field, and numbered steps, each placed exactly on the UI and timed to the click or the words that mention it. Use when asked to annotate a demo or tutorial, add callouts, arrows, labels or highlights to a screen recording, or make a walkthrough easier to follow. Builds on tella-motion-design. Highlights and text overlays work everywhere; arrows and badges use Tella's freeform tools, which are in beta and not available in every workspace.
+description: Point at things in a Tella screen recording with callouts, through the Tella MCP: a highlight that dims everything but the target, paired with a short label naming the step, numbered through a walkthrough and timed to the click or the words that mention it. Use when asked to annotate a demo or tutorial, add callouts, arrows, labels or highlights to a screen recording, or make a walkthrough easier to follow. Builds on tella-motion-design. Highlights and text overlays work everywhere; arrows and badges use Tella's freeform tools, which are in beta and not available in every workspace.
 ---
 
 # Screen callouts for a Tella video
@@ -13,27 +13,30 @@ Follow the `tella-motion-design` skill for the look, the timing, the reading rul
 
 ## Scope
 
-Show a short plan: each callout with its time, its target on screen and its treatment. Then build them all. Don't change cuts or layouts. Work with the zooms that are there: if a zoom is better than a callout for a moment, suggest it rather than adding both.
+Show a short plan: each callout with its time, its target and its label. Then build them all.
 
 ## Find the moments
 
-- `get_mouse_events` with `types: ["clicks"]` and `get_key_events` show where the screen is being operated. The transcript shows where the speaker names something ("click Settings", "this field", "up here").
-- Add a callout where the target is small, far from the cursor, or easy to miss, and where the speaker names something without pointing at it. Skip moments where the cursor already makes it obvious.
-- Don't call out every click. In a long tutorial, the moments a viewer would pause to look for are enough.
+- `get_mouse_events` with `types: ["clicks"]` and `get_key_events` show where the screen is being operated, and the transcript shows where the speaker names something ("click Settings", "this field", "up here").
+- Call out each step the speaker walks through, including the last one, and the result a click reveals when the speaker points at it ("the transcript appears right here"). Skip clicks nobody mentions and moments where the cursor already makes it obvious.
 
-## Treatments
+## The default: a highlight with a label
 
-- **Highlight (spotlight):** everything outside the region being talked about darkens. Use the built-in highlight first (`add_highlight`, or `add_highlight` operations in `apply_video_edits` for several). It is placed on the screen recording itself, so it stays on its target through zooms and layout changes. Keep `intensity` around 0.5–0.6 so the rest stays readable, and give it some padding around the target.
-- **Label with arrow:** two to four words naming the target, with a short arrow or connector to it, placed in empty space next to it and never over other controls. The label enters first and the arrow draws on toward the target. Build it in freeform (`addTitle` and `addPath`) and place it with `add_overlay`.
-- **Numbered steps:** for a sequence of actions, a small numbered badge on each target as it is used. The numbers keep counting across the sequence and use the same badge throughout.
-- **Text only:** when the target is obvious but its name or a keyboard shortcut is not, a small text overlay near it ("⌘K", "Settings → Billing").
+Each callout is two parts, starting together 200–300 ms before the click or the word that names the target:
+
+- **A highlight** (`add_highlight`; `apply_video_edits` with `add_highlight` operations for several) dims everything outside the target. Its `point` and `dimensions` are percentages of the screen recording, not of the canvas: convert a click's pixels with the recording's size from `get_mouse_events`. Make the box the whole control plus padding of at least 2% of the recording on every side, so the click point sits well inside it, never near its edge. Keep `intensity` at 0.5–0.6.
+- **A label**: a small text overlay of two to four words naming the step the way the UI does ("New entry", "Settings → Sync"), next to the target in empty space on the canvas, never over another control, the cursor or the camera bubble. Number the labels ("1 · New entry") when the speaker walks through a sequence; the numbers keep counting across it. All labels share one look.
+
+Hold each callout until the action is done and at least 2 s. When the next callout starts less than about a second after one ends, end the first exactly where the next starts, so the dimming doesn't flicker off and on between them.
+
+Other treatments when they fit better: a label with an arrow built in freeform (`addTitle` and `addPath`, placed with `add_overlay`) for a target far from empty space, or a small text overlay alone for a shortcut or a menu path ("⌘K").
 
 ## Put it on the target
 
-- Highlights are positioned on the screen recording, so read their coordinates from the recording. Overlay positions are in the video's canvas, but the screen recording sits inside a layout and can be zoomed. Find the target in a `get_clip_frame` at the callout's time and place the callout from that frame, not from the raw screen coordinates of a mouse event.
-- If a zoom or a layout change moves the screen while an overlay callout is up, the callout no longer lines up. Time callouts to fully zoomed or unzoomed stretches, or end them before the move.
-- Keep the callout clear of the cursor and of what the user is typing or reading. It leaves once the action is done, usually after 1.5–3 s.
+- Find each target in a `get_clip_frame` at its time. Labels are placed in canvas percentages from that frame; highlights in screen-recording percentages.
+- If a zoom or a layout change moves the screen while a label is up, it no longer lines up. Time callouts to stretches without a move, or end them before it. Highlights follow the recording, so they stay on target.
+- Don't change cuts or layouts. If a zoom is better than a callout for a moment, suggest it rather than adding both.
 
 ## After building
 
-Check a frame at each callout's middle: it points at the right thing, sits on it exactly, covers nothing the viewer needs, and the label names the target the way the UI does. Report each callout with its time and target.
+Check a frame at each callout's middle: the highlight's box contains the whole target with room around it, the label names it and covers nothing the viewer needs. Report each callout with its time and target.

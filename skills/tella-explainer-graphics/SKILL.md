@@ -25,6 +25,7 @@ Pick explanations that have a shape: steps in order, a flow between parts, a sys
 - **Motion has meaning:** arrows draw on in the direction things move, a flow travels along its path, and a part appears on the word that names it.
 - **Focus:** the part being talked about is in the accent colour or at full strength, and the others step back (about 40% opacity, or the neutral colour). For a bigger diagram, move the camera: put the diagram in a group and animate its scale and position to push in on the part being explained, then pull back to the whole when a step completes. Keep at most one camera move going at a time.
 - **End on the whole:** the explanation finishes on the complete diagram, held for a beat so it can be read.
+- **Readable at video size:** shapes contrast clearly with the background, labels are at least the label size from the look, and nothing sits under the camera bubble or the speaker. The diagram leaves with an exit animation when the explanation ends.
 
 ## Build it
 
