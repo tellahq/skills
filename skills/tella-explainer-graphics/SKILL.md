@@ -1,6 +1,6 @@
 ---
 name: tella-explainer-graphics
-description: Turn an explanation in a Tella video into a diagram that builds itself as the speaker talks, through the Tella MCP: processes, flows, architectures, comparisons, hierarchies, timelines and cycles, as freeform b-roll or an overlay, with each part appearing as it is named. Use when asked for explainer graphics, an animated diagram, a visual for a concept, or b-roll that explains rather than decorates. Builds on tella-motion-design. Needs Tella's freeform tools, which are in beta and not available in every workspace.
+description: Turn an explanation in a Tella video into a diagram that builds itself as the speaker talks, through the Tella MCP, for processes, flows, architectures, comparisons, hierarchies, timelines and cycles, as freeform b-roll or an overlay, with each part appearing as it is named. Use when asked for explainer graphics, an animated diagram, a visual for a concept, or b-roll that explains rather than decorates. Builds on tella-motion-design. Needs Tella's freeform tools, which are in beta and not available in every workspace.
 ---
 
 # Explainer graphics for a Tella video
