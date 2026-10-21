@@ -1,0 +1,4 @@
+interface:
+  display_name: "Title cards"
+  short_description: "Opening, chapter and end titles"
+  default_prompt: "Use $tella-title-cards to add an opening title and chapter cards to my latest Tella video."

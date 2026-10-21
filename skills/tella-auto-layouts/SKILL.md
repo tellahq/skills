@@ -45,7 +45,7 @@ The base layout is the home shot and carries most of the clip. Pick it for the c
 
 ### Layout changes
 
-A layout change needs a reason a viewer would feel. Most of the clip stays on the base layout, with gaps between changes. Back-to-back changes are for a deliberate mini-sequence, such as a fullscreen camera shot followed by a punch-in on the key phrase. A few well-placed changes per minute at most is plenty, and a static or very short clip may need none. Too many changes is the most common complaint about auto layouts, so when in doubt, leave the base layout.
+A layout change needs a reason a viewer would feel. Most of the clip stays on the base layout, with gaps between changes. Back-to-back changes are for a deliberate mini-sequence, such as a fullscreen camera shot followed by a punch-in on the key phrase. A few well-placed changes per minute at most is plenty, and a static or very short clip may need none. Too many changes is the most common complaint about auto layouts, so when in doubt, leave the base layout. A Short is the exception: in a vertical video of a minute or less, follow the pace in the `tella-short` skill instead.
 
 Useful changes, in the MCP's vocabulary (the `add_layout` schema lists what each `layoutSceneType` accepts):
 

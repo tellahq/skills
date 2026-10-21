@@ -1,0 +1,4 @@
+interface:
+  display_name: "Remove mistakes"
+  short_description: "Find and cut retakes and false starts"
+  default_prompt: "Use $tella-remove-mistakes to clean up the retakes in my latest Tella video."

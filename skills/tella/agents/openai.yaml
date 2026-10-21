@@ -1,0 +1,4 @@
+interface:
+  display_name: "Tella"
+  short_description: "Analyze, edit and verify Tella videos"
+  default_prompt: "Use $tella to tighten the pacing of my latest Tella video and make it 9:16 for mobile."

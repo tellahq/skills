@@ -1,0 +1,4 @@
+interface:
+  display_name: "Motion design"
+  short_description: "One motion style for a video's graphics"
+  default_prompt: "Use $tella-motion-design to set up a motion style for my latest Tella video that matches my brand."
