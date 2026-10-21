@@ -1,0 +1,4 @@
+interface:
+  display_name: "Auto layouts"
+  short_description: "Lay out a clip's camera and screen"
+  default_prompt: "Use $tella-auto-layouts to lay out my latest Tella video as a product demo."

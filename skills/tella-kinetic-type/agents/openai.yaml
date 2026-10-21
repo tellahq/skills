@@ -1,0 +1,4 @@
+interface:
+  display_name: "Kinetic type"
+  short_description: "Animated type timed to the spoken word"
+  default_prompt: "Use $tella-kinetic-type to add kinetic type to the key moments of my latest Tella video."

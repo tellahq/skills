@@ -1,0 +1,4 @@
+interface:
+  display_name: "Auto cut"
+  short_description: "Cut mistakes, fillers and pauses in one go"
+  default_prompt: "Use $tella-auto-cut to tighten up my latest Tella video."

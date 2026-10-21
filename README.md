@@ -34,6 +34,12 @@ Tighten a Tella video in one go: cut recording mistakes, filler words and silent
 
 > Example prompt: `/tella-auto-cut Tighten up my latest video`
 
+### `tella-short`
+
+Turn a video into a vertical Short, Reel or TikTok: pick its strongest 15 to 60 seconds, make a trimmed 9:16 copy, tighten it, add captions, and lay it out at Shorts pace with a hook up front, B-roll that moves and the speaker on screen. It shows a scene-by-scene plan first.
+
+> Example prompt: `/tella-short Make a Short from the best part of my latest video`
+
 ### `tella-motion-design`
 
 The shared rules the motion graphics skills below follow: one look per video (typeface, palette, easing, timing), graphics timed to the spoken word, reading limits, clichés to avoid, which Tella tool builds which graphic, and checking the result frame by frame.

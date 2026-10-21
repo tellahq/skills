@@ -1,0 +1,4 @@
+interface:
+  display_name: "Screen callouts"
+  short_description: "Spotlights, labels and steps on a demo"
+  default_prompt: "Use $tella-screen-callouts to annotate the setup steps in my latest Tella demo."

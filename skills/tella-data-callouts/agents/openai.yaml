@@ -1,0 +1,4 @@
+interface:
+  display_name: "Data callouts"
+  short_description: "Big stats, count-ups and charts on cue"
+  default_prompt: "Use $tella-data-callouts to visualize the results I mention in my latest Tella video."

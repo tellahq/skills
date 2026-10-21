@@ -1,0 +1,4 @@
+interface:
+  display_name: "Make a Short"
+  short_description: "Turn a video into a 9:16 Short, Reel or TikTok"
+  default_prompt: "Use $tella-short to make a Short from the best part of my latest Tella video."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Explainer graphics"
+  short_description: "Diagrams that build as the speaker talks"
+  default_prompt: "Use $tella-explainer-graphics to visualize what I explain in my latest Tella video."

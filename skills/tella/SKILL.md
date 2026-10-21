@@ -34,7 +34,7 @@ Treat “b-roll” as supporting media that usually belongs in a media-bearing l
 
 When a different format is requested or clearly suits the intended platform, `update_video` dimensions can change the output canvas and aspect ratio—for example, 1080×1920 for a 9:16 mobile video. Uncommon dimensions can be intentional, including Tella’s Auto ratio, so do not normalize them unless the user asks or the target format requires it. Changing dimensions remaps existing layouts rather than changing the source footage, so inspect and adjust the layouts afterward.
 
-For event-driven edits, prefer recorded metadata such as mouse events and transcript timing when available, then inspect the surrounding video before placing effects. Create derivative clips or reels from duplicates rather than repurposing the original.
+For event-driven edits, prefer recorded metadata such as mouse events and transcript timing when available, then inspect the surrounding video before placing effects. Create derivative clips or reels from duplicates rather than repurposing the original. To turn a video into a vertical Short, Reel or TikTok, use the `tella-short` skill.
 
 Resolve the time domain before editing: video-level inspection uses cumulative video playback time; most clip edits use clip-local playback time with cuts applied; `update_clip` cut definitions use raw recording time. Apply cut ranges measured from one playback state together, and re-read the timeline after a cut before calculating more.
 
