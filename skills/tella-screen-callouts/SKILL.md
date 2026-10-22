@@ -1,6 +1,6 @@
 ---
 name: tella-screen-callouts
-description: Point at things in a Tella screen recording with callouts, through the Tella MCP, using a highlight that dims everything but the target, paired with a short label naming the step, numbered through a walkthrough and timed to the click or the words that mention it. Use when asked to annotate a demo or tutorial, add callouts, arrows, labels or highlights to a screen recording, or make a walkthrough easier to follow. Builds on tella-motion-design. Highlights and text overlays work everywhere; arrows use Tella's freeform tools, which are in beta and not available in every workspace.
+description: Point at things in a Tella screen recording with callouts, through the Tella MCP, using a highlight that dims everything but the target, paired with a short label naming the step, numbered through a walkthrough and timed to the click or the words that mention it. Use when asked to annotate a demo or tutorial, add callouts, arrows, labels or highlights to a screen recording, or make a walkthrough easier to follow. Builds on tella-motion-design. Highlights and text overlays work everywhere; arrows use the Tella Motion tools, which are in beta and not available in every workspace.
 ---
 
 # Screen callouts for a Tella video
