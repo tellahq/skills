@@ -76,4 +76,4 @@ Point at things in a screen recording: spotlights, labels with arrows, and numbe
 
 > Example prompt: `/tella-screen-callouts Annotate the setup steps in my demo`
 
-The motion graphics skills use text overlays where they can. Diagrams, charts, count-ups, arrows and the richer type styles use Tella's freeform tools, which are in beta and not available in every workspace.
+The motion graphics skills use text overlays where they can. Diagrams, charts, count-ups, arrows and the richer type styles use the Tella Motion tools, which are in beta and not available in every workspace.

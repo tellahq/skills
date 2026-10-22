@@ -1,6 +1,6 @@
 ---
 name: tella-title-cards
-description: Design a matching set of title graphics for a Tella video through the Tella MCP, covering an opening title, chapter titles at each topic change, name tags (lower thirds) for people, and an end card, all from one design. Use when asked for titles, an intro or outro title, chapter cards, section headers, lower thirds, name tags or an end card. Builds on tella-motion-design. Simple titles use text overlays; designed cards use Tella's freeform tools, which are in beta and not available in every workspace.
+description: Design a matching set of title graphics for a Tella video through the Tella MCP, covering an opening title, chapter titles at each topic change, name tags (lower thirds) for people, and an end card, all from one design. Use when asked for titles, an intro or outro title, chapter cards, section headers, lower thirds, name tags or an end card. Builds on tella-motion-design. Simple titles use text overlays; designed cards use the Tella Motion tools, which are in beta and not available in every workspace.
 ---
 
 # Title cards for a Tella video
@@ -14,4 +14,4 @@ This skill needs the Tella MCP. If tools such as `get_timeline` are missing, fol
 - **Name tags**: a person's name and role the first time they appear, only as the video says them. The smallest size.
 - **End card**: the takeaway or the next step the speaker gives, with any link exactly as said. Large, like the opening title.
 
-Each kind has one style and one position throughout. Make only what was asked; no extra quote cards. All of them sit in the empty part of the frame, never over the speaker or the content being shown, on one grid. Design one of each kind, check it, then reuse it (a saved text preset, or a duplicated freeform document) for the rest. Titles go over the existing footage; add a separate title clip only when the user asks.
+Each kind has one style and one position throughout. Make only what was asked; no extra quote cards. All of them sit in the empty part of the frame, never over the speaker or the content being shown, on one grid. Design one of each kind, check it, then reuse it (a saved text preset, or a duplicated Tella Motion document) for the rest. Titles go over the existing footage; add a separate title clip only when the user asks.

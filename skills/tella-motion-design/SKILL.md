@@ -1,6 +1,6 @@
 ---
 name: tella-motion-design
-description: The shared rules for motion graphics in a Tella video, used through the Tella MCP, covering one look per video, graphics timed to the spoken word, placement clear of the speaker, and checking the result. Load it whenever you add text, titles or animated graphics to a video, including a general request to add motion graphics, and before tella-kinetic-type, tella-title-cards, tella-explainer-graphics, tella-data-callouts or tella-screen-callouts. Text overlays work everywhere; richer graphics use Tella's freeform tools, which are in beta and not available in every workspace.
+description: The shared rules for motion graphics in a Tella video, used through the Tella MCP, covering one look per video, graphics timed to the spoken word, placement clear of the speaker, and checking the result. Load it whenever you add text, titles or animated graphics to a video, including a general request to add motion graphics, and before tella-kinetic-type, tella-title-cards, tella-explainer-graphics, tella-data-callouts or tella-screen-callouts. Text overlays work everywhere; richer graphics use the Tella Motion tools, which are in beta and not available in every workspace.
 ---
 
 # Motion design for Tella videos
@@ -11,7 +11,7 @@ This skill needs the Tella MCP. If tools such as `get_timeline` are missing, fol
 
 ## Tools
 
-Use text overlays first: they work without freeform and stay editable like any text. Use highlights to point at UI in a screen recording. Use a freeform document (an overlay, or b-roll through `add_layout` with freeform `media`) only when several elements must move together, such as a diagram or a chart. Add a freeform clip only when the user asks, since it changes the video's length. If the freeform tools are missing, say so and do what the rest can.
+Use text overlays first: they work without Tella Motion and stay editable like any text. Use highlights to point at UI in a screen recording. Use a Tella Motion document (an overlay, or b-roll through `add_layout` with Tella Motion `media`) only when several elements must move together, such as a diagram or a chart. Add a Tella Motion clip only when the user asks, since it changes the video's length. If the Tella Motion tools are missing, say so and do what the rest can.
 
 ## A request for the whole video
 
@@ -37,7 +37,7 @@ Put graphics in the empty part of the frame, clear of the whole person (head, sh
 
 1. Read the video: `get_video`, `get_timeline`, `get_transcript` with word timings, frames of each shot, and the existing overlays and presets.
 2. Show a short plan, one row per graphic with its time, words and placement, then build it without asking again; the user can undo or ask for changes.
-3. Build the first graphic of each kind, check it, then make the others from it (the same fields or a saved text preset; `duplicate_freeform_document` for freeform) instead of rebuilding each one.
+3. Build the first graphic of each kind, check it, then make the others from it (the same fields or a saved text preset; `duplicate_motion_document` for Tella Motion) instead of rebuilding each one.
 4. Check every graphic with `get_clip_frame`, then read the overlays back against the transcript: on its words, readable, not overlapping, nothing covered, every name and number right. Fix what fails.
 5. Report the look and each graphic with its time.
 
