@@ -17,7 +17,7 @@ Finding mistakes is read-only. Do not cut anything until the user has approved t
 
 ## Workflow
 
-1. **Find the clips.** `get_timeline` lists the video's clips. Work clip by clip: transcripts, word indices and cuts are all per clip.
+1. **Find the clips.** `get_timeline` lists the video's clips. Work clip by clip: transcripts, word indices and cuts are all per clip. Before cutting, call `get_clip` on each one and keep its `cuts`, so you can restore it.
 2. **Read the transcript.** `get_transcript` returns words with a stable `index`, `startTimeMs` and `endTimeMs` on the clip's playback timeline (existing cuts already removed). Split it into sentences on `.`, `?` and `!` at the end of a word; several rules compare neighbouring sentences.
    - Long clips have thousands of words. Read them in windows of about 10 minutes with `startTimeMs`/`endTimeMs`, and start each window after the first about 60 seconds before the previous one ended, so retakes that span a window edge are still visible. A mistake found twice in the overlap, with similar bounds, is one mistake.
 3. **Spot the mistakes.** Apply [references/mistake-rules.md](references/mistake-rules.md). Each finding is an inclusive word-index range, a short reason (for example "False start" or "Repeated phrase"), and the words it removes. When unsure, leave it in: over-trimming is worse than under-trimming.
@@ -28,4 +28,4 @@ Finding mistakes is read-only. Do not cut anything until the user has approved t
 
 A cut call that returned the clip succeeded; don't send it again, even when a later result seems to lack its cuts. If a cut call fails or its outcome is unclear, re-read the transcript before retrying: words that were cut are absent from it. When `cut_clip_by_transcript` reports word indices not found, those words are already cut: drop those ranges and send the rest once. Never blindly repeat a cut.
 
-To undo, `get_clip` shows the clip's cuts and `update_clip` with `cuts: []` restores the whole clip and you can then re-apply the cuts you want to keep. Prefer that to guessing at a partial undo.
+To undo, call `update_clip` with the `cuts` you saved before cutting, then re-apply the cuts you want to keep. Prefer that to guessing at a partial undo. `cuts` replaces the clip's whole cut list, and the person may be editing the video by hand while you work: keep any cut in the current `get_clip` that neither you made nor was in the saved list, and never send `cuts: []` unless they asked to remove every cut.
