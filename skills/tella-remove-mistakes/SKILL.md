@@ -15,6 +15,8 @@ Mistakes are not filler words or silences. For standalone "um"/"uh", use `remove
 
 Finding mistakes is read-only. Do not cut anything until the user has approved the list, unless they explicitly asked you to remove the mistakes without reviewing.
 
+Once the user has answered, cut only what they approved. A mistake you spot after that (while re-reading the seams, or in a later turn about something else) is a new finding, even when it looks like the rest of an approved one: list it and ask, don't cut it.
+
 ## Workflow
 
 1. **Find the clips.** `get_timeline` lists the video's clips. Work clip by clip: transcripts, word indices and cuts are all per clip.
