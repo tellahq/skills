@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Throwaway branch: proves a failed setup cannot leave a Sandbox running.
+echo "setup: failing on purpose" >&2
+exit 1
