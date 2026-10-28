@@ -22,7 +22,9 @@ Ask in one message, guesses filled in: what is launching and for whom, the one t
 | Founder to camera with product graphics | The user talks to camera; trust in a person matters |
 | Product walkthrough | A screen recording of the real flow exists |
 | Music-only trailer | No voice; a feed, a hero section or a teaser |
-| Vertical feature drop | One feature for social; use `tella-short` |
+| Vertical feature drop | One feature for a social feed, 9:16, 15 to 40 s |
+
+A vertical feature drop follows this skill's plan, build and end card at 1080×1920. From an existing talking recording, borrow `tella-short` for the 9:16 copy, captions, pace and phone checks; this plan replaces its segment pick, and the end card replaces its end-on-speaker rule. With no speaker (music and type, or screenshots), skip `tella-short`'s speaker rules.
 
 ## 2. Plan
 

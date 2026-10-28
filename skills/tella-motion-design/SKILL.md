@@ -15,7 +15,7 @@ Use text overlays first: they work without Tella Motion and stay editable like a
 
 ## A request for the whole video
 
-For a general request ("add some motion graphics"), go through the video stretch by stretch and give each part what it needs, loading the matching skill: the hook and key lines as type, numbers as callouts, a screen demo's steps as screen callouts, an explanation with a shape as a diagram, and the call to action. Leave stretches that need nothing alone.
+For a general request ("add some motion graphics"), go through the video stretch by stretch and give each part what it needs, loading the matching skill: the hook and key lines as type, numbers as callouts, a screen demo's steps as screen callouts, an explanation with a shape as a diagram, several things shown at once as a carousel, product screens as redrawn or parallax UI, and the call to action. Leave stretches that need nothing alone.
 
 ## One look
 

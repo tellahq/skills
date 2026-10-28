@@ -28,7 +28,9 @@ Once the scope is clear, implement a coherent, watchable first pass while preser
 
 Each clip has a base layout, addressed as `layoutId: "base"`: change it with `update_layout`, and use `add_layout` with a time range to change only a section of the clip. Users name layouts by the editor's picker labels, such as “Split Right Overlap”; use the kind and style the tool descriptions give for that label, not the nearest default variant. To lay out a clip automatically, use the `tella-auto-layouts` skill.
 
-For motion graphics (animated text, titles, diagrams, number callouts, screen annotations), load the `tella-motion-design` skill for the shared rules, then the skill for the graphic: `tella-kinetic-type`, `tella-title-cards`, `tella-explainer-graphics`, `tella-data-callouts` or `tella-screen-callouts`.
+For motion graphics (animated text, titles, diagrams, number callouts, screen annotations), load the `tella-motion-design` skill for the shared rules, then the skill for the graphic: `tella-kinetic-type`, `tella-title-cards`, `tella-explainer-graphics`, `tella-data-callouts`, `tella-screen-callouts`, `tella-carousels`, `tella-transitions` or `tella-camera-moves`. For product UI in Tella Motion, use `tella-ui-redraw` (rebuilt screens), `tella-ui-interactions` (UI that acts) or `tella-ui-parallax` (depth from a screenshot).
+
+To plan what to say and show before recording, or to turn a loose take into a script to record again, use the `tella-plan-video` skill. For a launch, promo or feature video, use `tella-launch-video`; for a video from release notes, `tella-changelog-video`.
 
 Treat “b-roll” as supporting media that usually belongs in a media-bearing layout, taking over or sharing the main visual area. Use an overlay when the media is intended to float over the primary scene.
 
