@@ -1,0 +1,4 @@
+interface:
+  display_name: "Carousels"
+  short_description: "Show many images or screens as a moving carousel"
+  default_prompt: "Use $tella-carousels to show the screenshots in my latest Tella video as a carousel."

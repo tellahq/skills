@@ -1,0 +1,4 @@
+interface:
+  display_name: "Changelog Video"
+  short_description: "Turn release notes into a product update video"
+  default_prompt: "Use $tella-changelog-video to make an update video from these release notes."

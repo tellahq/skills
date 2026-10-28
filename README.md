@@ -40,6 +40,18 @@ Turn a video into a vertical Short, Reel or TikTok: pick its strongest 15 to 60 
 
 > Example prompt: `/tella-short Make a Short from the best part of my latest video`
 
+### `tella-plan-video`
+
+Plan a video before you record it: what it's for, the one point, a word-for-word script sized to the length, and a storyboard of what's on screen at each line. It can also turn a long, loose take into a tight script to record again.
+
+> Example prompt: `/tella-plan-video Help me plan a 45-second launch video for our new feature`
+
+### `tella-launch-video`
+
+Make a launch, promo or feature video: it asks what's launching and what material you have, picks a shape (founder to camera, product walkthrough, music-only trailer, vertical feature drop), plans it, then cuts, lays out, animates the product, adds music and an end card.
+
+> Example prompt: `/tella-launch-video Turn my recording into a launch video for our landing page`
+
 ### `tella-motion-design`
 
 The shared rules the motion graphics skills below follow: one look per video (typeface, palette, easing, timing), graphics timed to the spoken word, reading limits, clichés to avoid, which Tella tool builds which graphic, and checking the result frame by frame.
@@ -75,5 +87,47 @@ Show the numbers the speaker says as big stats, count-ups, bars and comparisons,
 Point at things in a screen recording: spotlights, labels with arrows, and numbered steps, placed on the UI and timed to the click or the words that mention it.
 
 > Example prompt: `/tella-screen-callouts Annotate the setup steps in my demo`
+
+### `tella-ui-redraw`
+
+Redraw your product's real screens natively in Tella Motion, as live shapes and text simplified to what the shot needs, then animate the UI doing its thing: the cursor clicks, a panel opens, a list fills, a number counts up.
+
+> Example prompt: `/tella-ui-redraw Make animated UI shots of the dashboard steps in my demo`
+
+### `tella-ui-parallax`
+
+Turn a real screenshot into a parallax shot: cut its pieces out, lift the one that matters towards the viewer, blur the rest back, and move one camera through the layers. Nothing is redrawn, so it is exactly your product.
+
+> Example prompt: `/tella-ui-parallax Make a parallax shot of the invoice card in this screenshot`
+
+### `tella-ui-interactions`
+
+Recipes for UI that acts in Tella Motion: presses, menus and modals growing from a click, toggles, tabs, typing, loading, success checks, notifications and counters, each with its timing.
+
+> Example prompt: `/tella-ui-interactions Animate the settings toggle and the save confirmation`
+
+### `tella-carousels`
+
+Show several images, screens or clips as a carousel (a ring, an arc, a row or a stack) that lands on the one that matters as it's named.
+
+> Example prompt: `/tella-carousels Show our five templates as a carousel when I mention them`
+
+### `tella-transitions`
+
+Pick transitions that fit each cut: Tella's clip, layout and zoom transitions, or ones built in Tella Motion from something on screen (zoom through, grow into, wipe, match cut, whip), checked for flash frames.
+
+> Example prompt: `/tella-transitions Make the topic changes in my latest video feel smoother`
+
+### `tella-camera-moves`
+
+Zooms, punch-ins and camera moves with a reason and a hold: zoom to read, follow the cursor, punch in on a key line, push in, pull back to reveal, pan, focus pulls.
+
+> Example prompt: `/tella-camera-moves Add zooms where I click through the settings`
+
+### `tella-changelog-video`
+
+Turn release notes into a short update video, one beat per change shown in the product, ready to repeat every release.
+
+> Example prompt: `/tella-changelog-video Make an update video from these release notes`
 
 The motion graphics skills use text overlays where they can. Diagrams, charts, count-ups, arrows and the richer type styles use the Tella Motion tools, which are in beta and not available in every workspace.

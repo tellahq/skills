@@ -1,0 +1,4 @@
+interface:
+  display_name: "Launch Video"
+  short_description: "Plan and build a launch or feature video"
+  default_prompt: "Use $tella-launch-video to make a launch video for my product from my latest Tella recording."

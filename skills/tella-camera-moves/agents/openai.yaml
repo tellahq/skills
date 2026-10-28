@@ -1,0 +1,4 @@
+interface:
+  display_name: "Camera Moves"
+  short_description: "Zooms, punch-ins and camera moves with purpose"
+  default_prompt: "Use $tella-camera-moves to add zooms and camera moves to my latest Tella video."
