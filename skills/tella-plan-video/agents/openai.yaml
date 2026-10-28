@@ -1,0 +1,4 @@
+interface:
+  display_name: "Plan a Video"
+  short_description: "Script and storyboard a video before recording"
+  default_prompt: "Use $tella-plan-video to help me plan what to say and show in my next Tella video."

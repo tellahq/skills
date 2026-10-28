@@ -1,0 +1,4 @@
+interface:
+  display_name: "Animated UI"
+  short_description: "Redraw product screens as layered, animated UI"
+  default_prompt: "Use $tella-ui-redraw to turn the product screens in my latest Tella video into animated UI shots."

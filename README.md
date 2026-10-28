@@ -40,6 +40,18 @@ Turn a video into a vertical Short, Reel or TikTok: pick its strongest 15 to 60 
 
 > Example prompt: `/tella-short Make a Short from the best part of my latest video`
 
+### `tella-plan-video`
+
+Plan a video before you record it: what it's for, the one point, a word-for-word script sized to the length, and a storyboard of what's on screen at each line. It can also turn a long, loose take into a tight script to record again.
+
+> Example prompt: `/tella-plan-video Help me plan a 45-second launch video for our new feature`
+
+### `tella-launch-video`
+
+Make a launch, promo or feature video: it asks what's launching and what material you have, picks a shape (founder to camera, product walkthrough, music-only trailer, vertical feature drop), plans it, then cuts, lays out, animates the product, adds music and an end card.
+
+> Example prompt: `/tella-launch-video Turn my recording into a launch video for our landing page`
+
 ### `tella-motion-design`
 
 The shared rules the motion graphics skills below follow: one look per video (typeface, palette, easing, timing), graphics timed to the spoken word, reading limits, clichés to avoid, which Tella tool builds which graphic, and checking the result frame by frame.
@@ -75,5 +87,11 @@ Show the numbers the speaker says as big stats, count-ups, bars and comparisons,
 Point at things in a screen recording: spotlights, labels with arrows, and numbered steps, placed on the UI and timed to the click or the words that mention it.
 
 > Example prompt: `/tella-screen-callouts Annotate the setup steps in my demo`
+
+### `tella-ui-redraw`
+
+Redraw your product's real screens as animated, layered UI in Tella Motion: crisp rebuilt panels in depth layers that move in parallax, with the cursor clicking and the UI responding, timed to the words.
+
+> Example prompt: `/tella-ui-redraw Make animated UI shots of the dashboard steps in my demo`
 
 The motion graphics skills use text overlays where they can. Diagrams, charts, count-ups, arrows and the richer type styles use the Tella Motion tools, which are in beta and not available in every workspace.
