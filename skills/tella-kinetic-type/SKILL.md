@@ -23,3 +23,13 @@ Pick one or two that suit the video:
 - **Hook**: a short full-frame type sequence over the opening line, as Tella Motion b-roll, so the speaker's voice carries it.
 
 Use Tella Motion only for what overlays can't do, such as mixed colours in one line or type that grows out of a shape.
+
+## Moves
+
+Text overlays animate the whole overlay (`intro`, `outro`) and its letters, words or lines (`textIntro`, `textOutro` with `text.unit`) from the presets `fade`, `slide_*`, `mask_up`, `mask_down`, `grow`, `shrink`, `blur` and `blur_slide_up`, adjusted by move, scale, blur and `clip`. Tella Motion titles add `setTextAnimation` (`typewriter`, `rise`, `drop`, `pop`, `spread`, `spin` and others, by character, word or line, in any order), keyed font weight and mattes. One or two of these per video:
+
+- **Word roll**: one word in a held line changes through options: an overlay per option in the same box, each entering and leaving `mask_up` with `clip`, the last one held.
+- **Strike and replace**: a line draws across the old word (a shape overlay wiping in, or a Tella Motion path with `trimPath`), then the new word takes its place.
+- **Weight shift**: the stressed word, as its own Tella Motion title, goes from regular to black as it is said (key `fontWeight`; needs a variable font).
+- **Typed line**: `typewriter` by character at speaking pace, for a prompt, a search or a link.
+- **One shimmer**: a soft light band crosses a title once (a moving gradient shape matted to the title with `setMatte`). Never looping.

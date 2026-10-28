@@ -1,0 +1,4 @@
+interface:
+  display_name: "Backgrounds"
+  short_description: "Pick and apply on-brand backgrounds"
+  default_prompt: "Use $tella-backgrounds to give my latest Tella video a background that fits my brand."

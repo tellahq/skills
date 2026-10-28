@@ -1,0 +1,4 @@
+interface:
+  display_name: "UI Interactions"
+  short_description: "Animate UI state changes in Tella Motion"
+  default_prompt: "Use $tella-ui-interactions to animate the button clicks and menus in my product shots."

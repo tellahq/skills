@@ -1,0 +1,4 @@
+interface:
+  display_name: "Transitions"
+  short_description: "Pick and build transitions between shots"
+  default_prompt: "Use $tella-transitions to improve the transitions in my latest Tella video."
