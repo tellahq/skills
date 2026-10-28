@@ -46,4 +46,6 @@ Where a setting exists at video and clip scope, clip values act as overrides or 
 
 If a write has an unclear outcome, re-read the current state before retrying; never blindly repeat additive or cutting operations. Some changes process asynchronously, so wait for the rendered result before evaluating them.
 
+When the user wants to watch the video change while you edit it, or before a long run of edits, offer a live preview: `get_live_preview_link` returns a `url` to a player of the editor's preview that shows each saved edit a moment later, without re-rendering. Give the user that URL exactly as returned (its access token is in the `#token=` fragment), or open it yourself if your host can show web pages. Anyone with the link can watch without signing in until `expiresAt` (24 hours), so share it only with the user, and ask for a fresh one after it expires. It is for the user to watch; it does not replace checking your edits with `get_video_frame` and `get_video_preview`.
+
 After editing, re-read the timeline and inspect the affected ranges with the appropriate tools. Iterate until the requested result is present and no obvious problem remains. Report what changed, what the inspection actually verified, and any remaining uncertainty.
