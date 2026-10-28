@@ -124,12 +124,6 @@ Zooms, punch-ins and camera moves with a reason and a hold: zoom to read, follow
 
 > Example prompt: `/tella-camera-moves Add zooms where I click through the settings`
 
-### `tella-annotations`
-
-Underlines, loops, arrows, boxes and highlighter strokes that draw themselves on as you name the thing, clean or hand-drawn.
-
-> Example prompt: `/tella-annotations Circle the numbers I talk about in my latest video`
-
 ### `tella-changelog-video`
 
 Turn release notes into a short update video, one beat per change shown in the product, ready to repeat every release.

@@ -1,4 +1,0 @@
-interface:
-  display_name: "Annotations"
-  short_description: "Underline, circle and point at things as they are named"
-  default_prompt: "Use $tella-annotations to circle and underline the key parts of my latest Tella video."
