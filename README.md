@@ -130,12 +130,6 @@ Underlines, loops, arrows, boxes and highlighter strokes that draw themselves on
 
 > Example prompt: `/tella-annotations Circle the numbers I talk about in my latest video`
 
-### `tella-backgrounds`
-
-Choose a background that fits the brand from everything Tella has: your own, Tella's catalog, colours, gradients, animated gradients, images, videos and the ambient blur.
-
-> Example prompt: `/tella-backgrounds Give my latest video a background in our brand colours`
-
 ### `tella-changelog-video`
 
 Turn release notes into a short update video, one beat per change shown in the product, ready to repeat every release.

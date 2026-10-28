@@ -34,7 +34,7 @@ Plan with `tella-plan-video` on this shape: hook (~10%, the product working or t
 2. Lay it out (`tella-auto-layouts`). On a founder launch the speaker stays visible most of the time; product shots sit beside them or in a split, full screen only for the payoff.
 3. Product shots as planned, the first one built and checked, the rest made from it.
 4. Proof, only what the user gives: a quote word for word with the person's name and photo; a logo wall from the brands' own files; a real number (`tella-data-callouts`); a before and after (the old way piling up, then the calm new way).
-5. Type for the hook and the claim (`tella-kinetic-type`), transitions (`tella-transitions`), the background (`tella-backgrounds`).
+5. Type for the hook and the claim (`tella-kinetic-type`), transitions (`tella-transitions`), and the brand's background (`list_backgrounds`).
 6. Music under the voice (`set_background_music`); sound effects only on visible actions.
 7. End card (`tella-title-cards`): the logo from the brand's file, the call to action exactly as given, held at least 2 s.
 
