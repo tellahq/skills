@@ -60,7 +60,7 @@ Hand the plan to the skills that build it, and keep to it:
 - Recording: give the script as plain text the user can paste into the recorder's Notes (Tella's teleprompter), take by take.
 - Cutting: `tella-auto-cut` or `tella-remove-mistakes` on the new recording, then check the cut's words against the script.
 - Layouts: `tella-auto-layouts`, using the storyboard's layout per line.
-- Graphics: `tella-motion-design` and the graphics skills (`tella-kinetic-type`, `tella-data-callouts`, `tella-explainer-graphics`, `tella-screen-callouts`, `tella-title-cards`, `tella-ui-redraw`) for the rows that call for them.
+- Graphics: `tella-motion-design` and the graphics skills (`tella-kinetic-type`, `tella-data-callouts`, `tella-explainer-graphics`, `tella-screen-callouts`, `tella-title-cards`, `tella-ui-redraw`, `tella-ui-parallax`) for the rows that call for them.
 - A whole launch video: `tella-launch-video`. A vertical cut: `tella-short`.
 
 When the edit drifts from the plan (a line was dropped, a shot was impossible), say so in the report rather than quietly changing the plan.

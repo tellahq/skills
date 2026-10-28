@@ -1,0 +1,4 @@
+interface:
+  display_name: "UI Parallax"
+  short_description: "Turn a screenshot into a layered parallax shot"
+  default_prompt: "Use $tella-ui-parallax to turn the screenshots in my latest Tella video into parallax shots."

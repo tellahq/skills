@@ -1,11 +1,11 @@
 ---
 name: tella-ui-redraw
-description: Redraw a product's real screens as animated, layered UI in Tella Motion, through the Tella MCP, the way launch and feature videos show software, with the interface rebuilt as live shapes and text, split into depth layers that move in parallax, and performing its real interaction (the cursor clicks, a panel opens, a list fills, a number counts up). Use when asked for animated UI, UI motion graphics, a product animation, motion plates or b-roll of the product, a parallax or 3D-feeling product shot, or to make a screenshot or screen recording look like a launch video. Builds on tella-motion-design. Needs the Tella Motion tools, which are in beta and not available in every workspace.
+description: Redraw a product's real screens natively in Tella Motion, through the Tella MCP, as live shapes, text and paths that stay sharp at any zoom and can be edited, simplified to what the shot needs and animated so the product performs its real interaction (the cursor clicks, a panel opens, a list fills, a number counts up, a toggle flips). Use when asked for animated UI, UI motion graphics, a product animation, motion plates of the product, or to rebuild a screen so it can act. For depth and parallax from a screenshot without redrawing it, use tella-ui-parallax. Builds on tella-motion-design. Needs the Tella Motion tools, which are in beta and not available in every workspace.
 ---
 
 # Redraw product UI as motion graphics
 
-The product shots in a good launch video are rarely screen recordings. They are the real interface redrawn as layers: crisp at any zoom, simplified to what the moment needs, and animated so the product looks like it is working. Build the screen from the user's real UI, split it into depth layers, move a camera through them, and let the UI perform one action per shot. Follow `tella-motion-design` for the look, timing, placement and checks; load it first if you haven't.
+The product shots in a good launch video are rarely screen recordings. They are the real interface redrawn: crisp at any zoom, simplified to what the moment needs, and animated so the product looks like it is working. Rebuild the screen from the user's real UI with Tella Motion's own shapes and text, and let it perform one action per shot. When the user wants depth from a screenshot as it is, without a redraw, use `tella-ui-parallax`; the two combine well (a redrawn hero piece over a parallaxed screenshot). Follow `tella-motion-design` for the look, timing, placement and checks; load it first if you haven't.
 
 This skill needs the Tella MCP and its Tella Motion tools. If tools such as `get_timeline` are missing, follow the connection steps in the `tella` skill first. If the Tella Motion tools are missing, say so, and offer zooms (`add_zoom`) and callouts on the screen recording instead.
 
@@ -29,20 +29,9 @@ A shot shows one action, so rebuild only what that action needs:
 
 Draw it in Tella Motion: rounded rectangles (`addShape`) for windows, cards, fields and buttons; text (`addTitle`) for every label, in the product's typeface when the document has it, else the nearest neutral sans; paths (`addPath`) for simple icons, or the product's real icon and logo files through `addMedia`; `cornerRadius` and soft shadows to match the product. Name every node for what it is (`window`, `sidebar`, `card.invoice`, `cursor`), and group the nodes of each piece (`group`). Text stays live text.
 
-## Depth layers
+## Depth
 
-Split the shot into three to five layers by how far they are from the viewer:
-
-| Layer | Holds | Treatment |
-| --- | --- | --- |
-| Background | The ground: a brand colour, a soft gradient from the brand palette, or the blurred real screenshot | Moves least; may be slightly blurred |
-| Window | The app window and its simplified context | Moves a little; a soft shadow |
-| Hero | The piece the action happens in, lifted out of the window | Moves more; a deeper, softer shadow; drawn at full sharpness |
-| Foreground | The cursor, a notification, a tooltip, a floating detail | Moves most |
-
-Parallax comes from one camera. Put the camera's move in curves (`setCurve`, for example `cam.x` and `cam.y` keyed over the shot), and bind each layer's `x` and `y` to it scaled by that layer's depth with `bindProperty` and `{op: "multiply", args: [{curve: "cam.x"}, <factor>]}` (added to its own position with `add`): around 0.2 for the background, 0.5 for the window, 1 for the hero and 1.3 for the foreground. One curve keeps every layer in step, and changing the move changes them all. A push in works the same way through `scale`.
-
-A slight 3D turn sells depth: give the window group `perspective` and a small `rotateX` or `rotateY` (under about 12°) during a move, with the hero turned a little less than the window. Land flat before the viewer has to read anything, and never hold tilted text. Keep the turn for the moves into and out of a shot; a shot that sits tilted reads as a template.
+A redrawn screen is flat unless you give it depth. Keep it light: the hero piece lifted out of its window with a deeper, softer shadow and drawn about 1.5 times larger, the context behind it dimmed slightly, and the cursor on top. For a camera move through layers, follow `tella-ui-parallax` for the depth factors and the camera curve; the layers it moves can be redrawn groups as well as cut-outs.
 
 ## The UI performs
 
@@ -66,14 +55,14 @@ Between shots, carry one object across: the card that was the result of one shot
 
 ## Placing it in the video
 
-Build each shot as a Tella Motion document (`create_motion_document`) the size of the video's canvas. Place it as b-roll for the words it illustrates (`add_layout` with `media: {type: "motion", documentId}`), keeping the speaker visible in the bubble or a split when the video has one, or as an overlay beside a speaker who doesn't fill the frame. Build the first shot, check it, then make the rest from it (`duplicate_motion_document` with `commandsFile`) so every shot shares the window, palette, cursor and camera feel.
+Build each shot as a Tella Motion document (`create_motion_document`) the size of the video's canvas. Place it as b-roll for the words it illustrates (`add_layout` with `media: {type: "motion", documentId}`), keeping the speaker visible in the bubble or a split when the video has one, or as an overlay beside a speaker who doesn't fill the frame. Build the first shot, check it, then make the rest from it (`duplicate_motion_document` with `commandsFile`) so every shot shares the window, palette, cursor and timing.
 
 ## Check
 
 Render frames with `get_motion_frame` and a preview with `get_motion_preview`, and answer each yes or no; fix every no:
 
 1. Side by side with the source crop (`view_image` on both, or one contact sheet): are the labels, values, order, icons and colours the real product's?
-2. At the first frame, the middle of each move, the click, and the held result: is every layer where it should be, with no gap opening between layers at the edge of the frame during a move?
+2. At the first frame, the middle of each move, the click, and the held result: is every piece where it should be, with nothing drifting off its place in the layout?
 3. Is all text sharp, flat and readable at phone size whenever it is held?
 4. Does the click cause the change on its frame, and does the action land on the word that names it?
 5. In the video (`get_filmstrip` just before, at and after the shot): no flash, blank or half-built frame at its entry and exit, and nothing covering the speaker's face?

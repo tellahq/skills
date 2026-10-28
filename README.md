@@ -90,8 +90,14 @@ Point at things in a screen recording: spotlights, labels with arrows, and numbe
 
 ### `tella-ui-redraw`
 
-Redraw your product's real screens as animated, layered UI in Tella Motion: crisp rebuilt panels in depth layers that move in parallax, with the cursor clicking and the UI responding, timed to the words.
+Redraw your product's real screens natively in Tella Motion, as live shapes and text simplified to what the shot needs, then animate the UI doing its thing: the cursor clicks, a panel opens, a list fills, a number counts up.
 
 > Example prompt: `/tella-ui-redraw Make animated UI shots of the dashboard steps in my demo`
+
+### `tella-ui-parallax`
+
+Turn a real screenshot into a parallax shot: cut its pieces out, lift the one that matters towards the viewer, blur the rest back, and move one camera through the layers. Nothing is redrawn, so it is exactly your product.
+
+> Example prompt: `/tella-ui-parallax Make a parallax shot of the invoice card in this screenshot`
 
 The motion graphics skills use text overlays where they can. Diagrams, charts, count-ups, arrows and the richer type styles use the Tella Motion tools, which are in beta and not available in every workspace.

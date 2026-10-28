@@ -50,13 +50,13 @@ Follow `tella-plan-video` and use this beat shape, scaled to the length:
 
 For a founder-to-camera launch, the user's script is the spine and the storyboard says which line each product shot illustrates. When their recording is a long, loose take, plan a short script to record again (see `tella-plan-video`) rather than trying to cut a launch out of it.
 
-In the plan, list each product shot as an animated UI piece (`tella-ui-redraw`), a zoomed stretch of the screen recording, or a graphic, with the real screen it comes from.
+In the plan, list each product shot as a redrawn, animated UI piece (`tella-ui-redraw`), a parallax shot of a screenshot (`tella-ui-parallax`), a zoomed stretch of the screen recording, or a graphic, with the real screen it comes from.
 
 ## 4. Build, in this order
 
 1. **Cut the speech.** `tella-auto-cut` on each talking clip, then read the cut transcript against the script. A launch has no room for a stumble: check every seam (listen where your client can, otherwise `get_audio_levels` and `get_video_preview` around it), and fix pauses that read as gaps. Every later time comes from the cut transcript.
 2. **Lay it out.** `tella-auto-layouts` with the storyboard's layout per line. For a founder launch, keep the speaker visible through most of it: product shots go beside them or in a split, with the speaker in the camera bubble, rather than full-screen over them. Use full-screen product shots only for the payoff and short beats.
-3. **The product shots.** For each, in the order of the plan: a zoom into the screen recording (`add_zoom`) when the real recording shows the step clearly; otherwise an animated rebuild of the screen with `tella-ui-redraw`, placed as b-roll (`add_layout` with `media: {type: "motion", documentId}`) or as an overlay beside the speaker. Build the first one, check it, and build the rest from it so they share one look.
+3. **The product shots.** For each, in the order of the plan: a zoom into the screen recording (`add_zoom`) when the real recording shows the step clearly; a parallax shot of a screenshot with `tella-ui-parallax` when the point is a piece of the screen as it is; or a redrawn screen with `tella-ui-redraw` when the UI has to perform an action. Place each as b-roll (`add_layout` with `media: {type: "motion", documentId}`) or as an overlay beside the speaker. Build the first one, check it, and build the rest from it so they share one look.
 4. **Type and numbers.** The hook and the claim as type (`tella-kinetic-type`), any number the user says with `tella-data-callouts`. Sparse: the product carries the proof.
 5. **Music and sound.** `set_background_music` with a track that fits the brand's pace, ducked under the voice. Add sound effects (`list_sound_effects`, `add_sound_effect`, or `generate_sound_effect` if the user approved it) only on visible actions: a click, a card landing, the payoff. No whoosh on every move.
 6. **The end card.** The logo from the brand's own file (the user's upload or library, never redrawn from memory), the product name and the call to action exactly as given, held at least 2 s. Build it with `tella-title-cards` in the video's look.
