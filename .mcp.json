@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "tella": {
+      "type": "http",
+      "url": "https://api.tella.com/mcp"
+    }
+  }
+}

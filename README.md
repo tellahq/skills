@@ -8,6 +8,24 @@
 npx skills add tellahq/skills
 ```
 
+## Claude plugin
+
+This repository is also the Tella plugin for Claude. The plugin bundles every skill below with the Tella MCP server, so Claude can find, analyze and edit your Tella videos without any setup beyond signing in.
+
+In Claude Code:
+
+```text
+/plugin install tella --marketplace tellahq/skills
+```
+
+In claude.ai and Cowork, install it from the plugin directory, then connect Tella on the plugin's Connectors tab. The plugin uses the same server as the [Tella connector](https://claude.ai/directory/tella), so if you've already connected it you'll see one set of Tella tools, not two. In Claude Code, sign in from `/mcp` or the first time Claude uses a Tella tool. Tella opens in your browser so you can sign in and pick a workspace.
+
+### What the plugin connects to
+
+The plugin adds one remote MCP server, `tella`, at `https://api.tella.com/mcp` (Streamable HTTP, signed in with your Tella account over OAuth). It runs no code on your machine: there are no hooks, scripts or local servers, only the skills' instructions and that server.
+
+When Claude calls a Tella tool, the tool's inputs (such as a video or clip id, a time range, overlay text or a script) go to Tella, and Tella returns data from the videos your account can open: titles, transcripts, timelines, frames, previews and analytics. Edits change your videos in Tella. Nothing is sent anywhere else. Tella handles that data under its [privacy policy](https://www.tella.com/legal/privacy-policy).
+
 ## Skills
 
 ### `tella`
