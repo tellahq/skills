@@ -11,6 +11,7 @@ Use the Tella MCP to understand, edit, and verify a video. Match the user's scop
 
 This skill drives Tella through its MCP server at `https://api.tella.com/mcp` (Streamable HTTP, OAuth). If no Tella MCP tools such as `get_timeline` are available, connect the server first:
 
+- Claude with the Tella plugin: the plugin already adds the server; connect it on the plugin's Connectors tab (claude.ai, Cowork) or from `/mcp` (Claude Code)
 - Claude Code: `claude mcp add --transport http --scope user tella https://api.tella.com/mcp`
 - Codex: `codex mcp add tella --url https://api.tella.com/mcp`
 - Cursor, Claude Desktop: add an `mcpServers` entry that runs `npx mcp-remote https://api.tella.com/mcp`

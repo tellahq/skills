@@ -1,0 +1,15 @@
+{
+  "name": "tella",
+  "description": "Tella's plugin for editing Tella videos with Claude.",
+  "owner": {
+    "name": "Tella HQ, Inc",
+    "url": "https://www.tella.com"
+  },
+  "plugins": [
+    {
+      "name": "tella",
+      "source": "./",
+      "description": "Edit your Tella videos with Claude: the Tella MCP server plus Tella's editing skills."
+    }
+  ]
+}
