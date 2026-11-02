@@ -29,7 +29,7 @@ Cut first, lay out last. The layout switches hide the jump cuts that cutting lea
    - `reactionShots` (default on): now and then show the listener during a long turn, on their "mm-hm" when there is one. Turn off when the user wants the camera only on whoever talks.
    - `breakUpMonologues` (default on): break up a long single shot with a wide shot of everyone or a punch-in.
    - `coverJumpCuts` (default on): change the framing on every cut inside a shot.
-   - `punchIns` (default on): allow punch-ins on the host's camera.
+   - `punchIns` (default on): allow punch-ins on the guest's camera.
 3. **Apply it** with `apply_speaker_layouts`. If it says speech detection is still processing, wait a little and call it again. Its other errors name what the clip lacks; report them rather than laying the clip out by hand.
 4. **Check it.** The answer lists every shot with its time and why it was chosen. Run `get_clip_frame` in the middle of a few shots, including a `Speaking` shot of each person and an `everyone` shot, and check that the person talking is the one on screen.
 5. **Report** in a few lines: the pacing, how many shots, how the time splits between the speakers, and anything to look at.
