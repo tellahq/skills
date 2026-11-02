@@ -1,6 +1,6 @@
 ---
 name: tella-auto-podcast-layout
-description: Switch the camera to whoever is speaking in a Tella clip with two or more people on camera, such as a podcast or interview co-recording, through the Tella MCP. Uses apply_speaker_layouts, which reads each camera's speech detection and lays out the whole clip in one edit: the speaker full frame, everyone while they talk over each other, reaction shots, broken-up monologues and layout switches over jump cuts. Use when asked for auto podcast layouts, speaker switching, to cut to whoever is talking, or to make an interview more dynamic. In beta and not available in every workspace.
+description: Switch the camera to whoever is speaking in a Tella clip with two or more people on camera, such as a podcast or interview co-recording, through the Tella MCP. Uses apply_speaker_layouts, which reads each camera's speech detection and lays out the whole clip in one edit, with the speaker full frame, everyone while they talk over each other, reaction shots, broken-up monologues and layout switches over jump cuts. Use when asked for auto podcast layouts, speaker switching, to cut to whoever is talking, or to make an interview more dynamic. In beta and not available in every workspace.
 ---
 
 # Auto podcast layout for a Tella clip
