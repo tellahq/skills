@@ -1,0 +1,4 @@
+interface:
+  display_name: "Auto podcast layout"
+  short_description: "Cut the camera to whoever is speaking"
+  default_prompt: "Use $tella-auto-podcast-layout to switch the camera to whoever is speaking in my latest Tella podcast."
