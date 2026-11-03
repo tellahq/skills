@@ -50,6 +50,12 @@ Lay out a Tella clip automatically: pick a base layout, then add layout changes 
 
 > Example prompt: `/tella-auto-layouts Lay out my latest video as a product demo`
 
+### `tella-auto-podcast-layout`
+
+Cut the camera to whoever is speaking in a podcast or interview with two or more people on camera: the speaker full frame, everyone during crosstalk, reaction shots and switches that hide jump cuts. In beta and not available in every workspace.
+
+> Example prompt: `/tella-auto-podcast-layout Switch to whoever is talking in my latest podcast`
+
 ### `tella-auto-cut`
 
 Tighten a Tella video in one go: cut recording mistakes, filler words and silent pauses, then clean up the gaps and broken seams the cuts leave behind.
