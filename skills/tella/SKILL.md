@@ -14,7 +14,8 @@ This skill drives Tella through its MCP server at `https://api.tella.com/mcp` (S
 - Claude with the Tella plugin: the plugin already adds the server; connect it on the plugin's Connectors tab (claude.ai, Cowork) or from `/mcp` (Claude Code)
 - Claude Code: `claude mcp add --transport http --scope user tella https://api.tella.com/mcp`
 - Codex: `codex mcp add tella --url https://api.tella.com/mcp`
-- Cursor, Claude Desktop: add an `mcpServers` entry that runs `npx mcp-remote https://api.tella.com/mcp`
+- Cursor: install the Tella plugin, or add `"tella": { "url": "https://api.tella.com/mcp" }` under `mcpServers` in `~/.cursor/mcp.json`
+- Claude Desktop: add an `mcpServers` entry that runs `npx mcp-remote https://api.tella.com/mcp`
 - Anything else: any Streamable HTTP MCP client; a personal API key (`tella_pk_…`, created at Settings → API Keys in Tella) works as the bearer token
 
 The first connection opens Tella in the browser to sign in and pick a workspace. The full tool reference is at https://www.tella.com/docs/mcp-server.
