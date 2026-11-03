@@ -20,11 +20,15 @@ In Claude Code:
 
 In claude.ai and Cowork, install it from the plugin directory, then connect Tella on the plugin's Connectors tab. The plugin uses the same server as the [Tella connector](https://claude.ai/directory/tella), so if you've already connected it you'll see one set of Tella tools, not two. In Claude Code, sign in from `/mcp` or the first time Claude uses a Tella tool. Tella opens in your browser so you can sign in and pick a workspace.
 
-### What the plugin connects to
+## Cursor plugin
 
-The plugin adds one remote MCP server, `tella`, at `https://api.tella.com/mcp` (Streamable HTTP, signed in with your Tella account over OAuth). It runs no code on your machine: there are no hooks, scripts or local servers, only the skills' instructions and that server.
+The same repository is the Tella plugin for Cursor, with the same skills and the same Tella MCP server. Install it from the Cursor Marketplace, or try it before it's listed by copying this repository into `~/.cursor/plugins/local/tella` and reloading Cursor. Cursor asks you to sign in to Tella the first time it uses a Tella tool.
 
-When Claude calls a Tella tool, the tool's inputs (such as a video or clip id, a time range, overlay text or a script) go to Tella, and Tella returns data from the videos your account can open: titles, transcripts, timelines, frames, previews and analytics. Edits change your videos in Tella. Nothing is sent anywhere else. Tella handles that data under its [privacy policy](https://www.tella.com/legal/privacy-policy).
+## What the plugins connect to
+
+Both plugins add one remote MCP server, `tella`, at `https://api.tella.com/mcp` (Streamable HTTP, signed in with your Tella account over OAuth). It runs no code on your machine: there are no hooks, scripts or local servers, only the skills' instructions and that server.
+
+When Claude or Cursor calls a Tella tool, the tool's inputs (such as a video or clip id, a time range, overlay text or a script) go to Tella, and Tella returns data from the videos your account can open: titles, transcripts, timelines, frames, previews and analytics. Edits change your videos in Tella. Nothing is sent anywhere else. Tella handles that data under its [privacy policy](https://www.tella.com/legal/privacy-policy).
 
 ## Skills
 

@@ -1,0 +1,20 @@
+{
+  "name": "tella",
+  "displayName": "Tella",
+  "description": "Edit your Tella videos from Cursor: connects the Tella MCP server and adds skills for removing mistakes, auto cuts, layouts, Shorts, planning videos, launch and changelog videos, titles, callouts, transitions and camera moves.",
+  "author": {
+    "name": "Tella HQ, Inc"
+  },
+  "homepage": "https://www.tella.com/docs/mcp-server",
+  "repository": "https://github.com/tellahq/skills",
+  "license": "MIT",
+  "logo": "assets/logo.png",
+  "keywords": [
+    "video",
+    "video-editing",
+    "screen-recording",
+    "tella",
+    "mcp"
+  ],
+  "mcpServers": "./.mcp.json"
+}
