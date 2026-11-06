@@ -1,5 +1,6 @@
 {
   "name": "tella",
+  "displayName": "Tella",
   "version": "1.0.0",
   "description": "Edit your Tella videos with Claude: connects the Tella MCP server and adds skills for removing mistakes, auto cuts, layouts, Shorts, planning videos, launch and changelog videos, titles, callouts, transitions and camera moves.",
   "author": {
@@ -11,5 +12,8 @@
   "license": "MIT",
   "keywords": ["video", "video-editing", "screen-recording", "tella"],
   "icon": "./assets/logo.png",
-  "privacyPolicyUrl": "https://www.tella.com/legal/privacy-policy"
+  "documentationUrl": "https://www.tella.com/docs/mcp-server",
+  "supportUrl": "https://www.tella.com/help",
+  "privacyPolicyUrl": "https://www.tella.com/legal/privacy-policy",
+  "termsOfServiceUrl": "https://www.tella.com/legal/terms-of-service"
 }
