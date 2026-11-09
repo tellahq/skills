@@ -1,6 +1,6 @@
 ---
 name: tella-audio-sync
-description: Fix a Tella video whose voice is out of sync with the speaker's lips, through the Tella MCP. Measures how far the voice is ahead of or behind the picture by comparing where words start in the clip's audio levels with the frames where the lips open, then moves the clip's voice with update_clip's audioOffset and checks the result. Use when asked to fix lip sync, audio sync or A/V sync, or when the voice comes before or after the mouth moves. Needs Audio sync, which is in beta and not available in every workspace.
+description: Fix a Tella video whose voice is out of sync with the speaker's lips, through the Tella MCP. Measures how far the voice is ahead of or behind the picture by comparing where words start in the clip's audio levels with the frames where the lips open, then moves the clip's voice with update_clip's audioOffset, checks the result, and tells the user what to set the Mac app's Delay audio to for that microphone. Use when asked to fix lip sync, audio sync or A/V sync, or when the voice comes before or after the mouth moves. Needs Audio sync, which is in beta and not available in every workspace.
 ---
 
 # Audio sync
@@ -26,7 +26,7 @@ Work on one clip at a time. All times are ms on the clip's playback timeline, wh
 5. **The word's offset** is the sound's start minus that frame's time. Positive: the voice is late.
 6. **Combine.** Take the median of the words you could read. If fewer than 3 were readable, or they spread over more than 80 ms, measure 3 more words and look at all of them again: if still fewer than 3 are readable, or they still spread over more than 80 ms, report what you measured and stop without changing anything.
 
-A frame is 33 ms, so a median within 40 ms of zero is in sync: leave it and say so.
+A frame is 33 ms, so a median within 40 ms of zero is in sync: leave it and say so. If the user hears it out of sync only in the editor, not in the export or on the share page, that is the editor's playback, not the recording: change nothing.
 
 ## Fix
 
@@ -40,4 +40,17 @@ A voice played later than recorded leaves the first ms of the clip silent and lo
 
 Measure 3 words again on each clip you changed. Each should now be within 40 ms of zero; if not, measure and fix again once.
 
-Report in a few lines: each clip changed, its new `audioOffset` and whether the voice was late or early, how many words you measured and how far they agreed, and any clip you left alone and why. Tell the user they can fine-tune it by ear under Audio sync in the editor's Audio panel.
+## Fix future recordings
+
+The offset comes from the recording setup, so the next recording with the same microphone will be out of sync too. The Mac app can fix that at the source: its per-microphone **Delay audio** setting plays that microphone's voice later by its Amount, 0 to 1000 ms. It can't play a voice earlier.
+
+`list_sources` on each clip you changed reports, for the source with the voice, the `microphone` it was recorded with and `recordedWith`. Only when `recordedWith` is `mac`, give the user the setting to change, per microphone, where F is the clip's new `audioOffset` rounded to 10 ms:
+
+- **F is positive (the voice was early):** "In the Tella Mac app, pick **<microphone>** as your microphone, open Settings (⌘,) → Recording → Microphone → Advanced Settings, turn on **Delay audio** and set Amount to F ms. If Delay audio is already on, add F to its Amount." If that would pass 1000 ms, say the setting can't go that far.
+- **F is negative (the voice was late):** Delay audio can't move a voice earlier. If it is on for that microphone, ask the user to lower its Amount by −F ms (turn it off at 0). If it is off, or its Amount is less than −F, say the Mac app can't fix this microphone yet, and that recordings with it will need Audio sync again, at about the same offset.
+
+Tella can't see what Delay audio is set to, so phrase it as above rather than assuming 0. When clips were recorded with different microphones, give each microphone its own value. If `microphone` is missing, say "the microphone you recorded this with". For other apps (`windows`, `web`, `upload`) don't mention Delay audio.
+
+## Report
+
+Report in a few lines: each clip changed, its new `audioOffset` and whether the voice was late or early, how many words you measured and how far they agreed, and any clip you left alone and why. Tell the user they can fine-tune it by ear under Audio sync in the editor's Audio panel. End with the Mac app step from above, if there is one.
