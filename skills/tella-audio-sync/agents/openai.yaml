@@ -1,0 +1,4 @@
+interface:
+  display_name: "Audio sync"
+  short_description: "Fix a voice that's out of sync with the lips"
+  default_prompt: "Use $tella-audio-sync to fix the lip sync in my latest Tella video."

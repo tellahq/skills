@@ -62,6 +62,12 @@ Turn a video into a vertical Short, Reel or TikTok: pick its strongest 15 to 60 
 
 > Example prompt: `/tella-short Make a Short from the best part of my latest video`
 
+### `tella-audio-sync`
+
+Fix a voice that's out of sync with the speaker's lips: it measures how far the voice is ahead or behind on a few words, comparing where each word starts in the audio with the frame where the lips open, moves the clip's voice by that much, and checks the result. Audio sync is in beta and not available in every workspace.
+
+> Example prompt: `/tella-audio-sync The audio is a bit behind my lips in my latest video, can you fix it?`
+
 ### `tella-plan-video`
 
 Plan a video before you record it: what it's for, the one point, a word-for-word script sized to the length, and a storyboard of what's on screen at each line. It can also turn a long, loose take into a tight script to record again.
