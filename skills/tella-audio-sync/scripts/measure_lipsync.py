@@ -197,7 +197,10 @@ def apertures(path, width, height, pts, box):
 def releases(T, A):
     """Times the lips part after being closed, a quarter of the way to open."""
     out = []
+    opened = 0
     for i in range(1, len(A) - 4):
+        if i < opened:  # still inside a closure whose release is counted
+            continue
         if not (A[i] < CLOSED and A[i] <= A[i - 1] and A[i] <= A[i + 1]):
             continue
         if A[max(0, i - 6) : i].min() < A[i]:
@@ -211,6 +214,7 @@ def releases(T, A):
         level = A[i] + 0.25 * (peak - A[i])
         k = after[int(np.argmax(A[after] >= level))]
         p = k - 1
+        opened = k + 1
         out.append(T[p] + (level - A[p]) / (A[k] - A[p]) * (T[k] - T[p]))
     return out
 
