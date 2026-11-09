@@ -1,3 +1,12 @@
+# measure_lipsync.py
+
+The lip-sync measurement script for the `tella-audio-sync` skill. Write it to a file before running it, exactly as below, with:
+
+```sh
+awk '/^```python$/{f=1;next} /^```$/{f=0} f' <this skill's folder>/references/measure-lipsync.md > /tmp/lipsync/measure_lipsync.py
+```
+
+```python
 """Measure how late a speaker's voice is relative to their lips.
 
     python3 measure_lipsync.py window1.mp4 [window2.mp4 ...]
@@ -332,3 +341,4 @@ if __name__ == "__main__":
     if len(sys.argv) < 2:
         sys.exit(__doc__)
     main(sys.argv[1:])
+```
