@@ -14,9 +14,9 @@ awk '/^```python$/{f=1;next} /^```$/{f=0} f' <this skill's folder>/references/me
 Each file is a short video with sound in which the speaker's face is visible
 (an mp4 of the camera source from get_source_thumbnail). Prints one JSON
 object: voiceLateMs (positive: the voice is heard after the lips move),
-confident, and per-file details. Needs ffmpeg, ffprobe and
-`pip install mediapipe scipy`; downloads MediaPipe's face landmark model
-(4 MB) on first use.
+confident, and per-file details. Needs ffmpeg, ffprobe, Python 3.11+ and
+`pip install mediapipe==1.2.2 scipy==1.16.3 numpy==2.3.5`; downloads version 1
+of MediaPipe's face landmark model (4 MB) on first use and checks its SHA-256.
 
 Method: when a word starts with p, b or m, or after a closed-mouth pause, the
 lips part and the voice starts at the same instant. The script finds every
@@ -26,6 +26,7 @@ strength around all releases at every lag from -700 to +700 ms and takes the
 peak, then times each release's onset near that peak and reports the median.
 """
 
+import hashlib
 import json
 import os
 
@@ -40,8 +41,9 @@ from scipy.signal import butter, sosfiltfilt
 
 MODEL_URL = (
     "https://storage.googleapis.com/mediapipe-models/face_landmarker/"
-    "face_landmarker/float16/latest/face_landmarker.task"
+    "face_landmarker/float16/1/face_landmarker.task"
 )
+MODEL_SHA256 = "64184e229b263107bc2b804c6625db1341ff2bb731874b0bcc2fe6544e0bc9ff"
 SR = 16000
 CROP = 384
 LAGS = np.arange(-700, 701)
@@ -53,10 +55,15 @@ def run(args):
 
 
 def model_path():
-    path = os.path.expanduser("~/.cache/tella-audio-sync/face_landmarker.task")
+    path = os.path.expanduser("~/.cache/tella-audio-sync/face_landmarker-1.task")
     if not os.path.exists(path):
         os.makedirs(os.path.dirname(path), exist_ok=True)
         urllib.request.urlretrieve(MODEL_URL, path + ".part")
+        with open(path + ".part", "rb") as f:
+            digest = hashlib.sha256(f.read()).hexdigest()
+        if digest != MODEL_SHA256:
+            os.remove(path + ".part")
+            sys.exit(f"face model checksum mismatch: {digest}")
         os.replace(path + ".part", path)
     return path
 
