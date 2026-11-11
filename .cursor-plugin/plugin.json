@@ -16,5 +16,9 @@
     "tella",
     "mcp"
   ],
-  "mcpServers": "./.mcp.json"
+  "mcpServers": {
+    "tella": {
+      "url": "https://api.tella.com/mcp"
+    }
+  }
 }

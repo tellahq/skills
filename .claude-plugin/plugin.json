@@ -15,5 +15,11 @@
   "documentationUrl": "https://www.tella.com/docs/mcp-server",
   "supportUrl": "https://www.tella.com/help",
   "privacyPolicyUrl": "https://www.tella.com/legal/privacy-policy",
-  "termsOfServiceUrl": "https://www.tella.com/legal/terms-of-service"
+  "termsOfServiceUrl": "https://www.tella.com/legal/terms-of-service",
+  "mcpServers": {
+    "tella": {
+      "type": "http",
+      "url": "https://api.tella.com/mcp"
+    }
+  }
 }
