@@ -4,7 +4,7 @@ Edit your [Tella](https://www.tella.com) videos from Antigravity. The plugin con
 
 ## Setup
 
-Install the plugin, then sign in to Tella in your browser the first time the Tella server connects and pick a workspace. You need a Tella account; there's nothing else to configure.
+Install the plugin, then sign in to Tella: in the Antigravity App, click **Authenticate** next to the Tella server under **Customizations** > **Installed** > **MCP Servers**; in the CLI, run `/mcp`, select the Tella server and choose **Authenticate**. Tella opens in your browser so you can sign in and pick a workspace. You need a Tella account; there's nothing else to configure.
 
 ## What you can ask for
 

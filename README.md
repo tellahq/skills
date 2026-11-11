@@ -32,7 +32,7 @@ The same repository is also the Tella plugin for Google Antigravity, with the sa
 agy plugin install https://github.com/tellahq/skills
 ```
 
-Plugins installed with `agy` also show in the Antigravity App under Customizations > Installed. Antigravity asks you to sign in to Tella in your browser the first time the Tella server connects.
+Plugins installed with `agy` also show in the Antigravity App under Customizations > Installed. To sign in, click Authenticate next to the Tella server under Customizations > Installed > MCP Servers in the App, or run `/mcp` in the CLI, select the Tella server and choose Authenticate. Tella opens in your browser so you can sign in and pick a workspace.
 
 ## What the plugins connect to
 
