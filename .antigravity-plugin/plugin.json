@@ -1,0 +1,21 @@
+{
+  "$schema": "https://antigravity.google/schemas/v1/plugin.json",
+  "name": "tella",
+  "displayName": "Tella",
+  "version": "1.0.0",
+  "description": "Edit your Tella videos with an agent: cut mistakes, lay out clips, make Shorts, add titles and motion graphics, and plan launch and changelog videos.",
+  "logo": "assets/logo-padded.png",
+  "suggestedPrompts": [
+    "Remove the mistakes and retakes from my latest Tella video",
+    "Make a vertical Short from the best part of my latest Tella video",
+    "Help me plan a 45-second launch video for our new feature"
+  ],
+  "author": {
+    "name": "Tella HQ, Inc",
+    "url": "https://www.tella.com"
+  },
+  "homepage": "https://www.tella.com/docs/mcp-server",
+  "repository": "https://github.com/tellahq/skills",
+  "license": "MIT",
+  "keywords": ["video", "video-editing", "screen-recording", "tella", "mcp"]
+}

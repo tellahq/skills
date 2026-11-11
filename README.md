@@ -2,7 +2,7 @@
 
 [![skills.sh](https://skills.sh/b/tellahq/skills)](https://skills.sh/tellahq/skills)
 
-[Agent Skills](https://agentskills.io) for working with [Tella](https://www.tella.com) videos from Claude Code, Codex, Cursor, and any other skills-compatible agent.
+[Agent Skills](https://agentskills.io) for working with [Tella](https://www.tella.com) videos from Claude Code, Codex, Cursor, Antigravity, and any other skills-compatible agent.
 
 ```bash
 npx skills add tellahq/skills
@@ -24,11 +24,21 @@ In claude.ai and Cowork, install it from the plugin directory, then connect Tell
 
 The same repository is the Tella plugin for Cursor, with the same skills and the same Tella MCP server. Install it from the Cursor Marketplace, or try it before it's listed by copying this repository into `~/.cursor/plugins/local/tella` and reloading Cursor. Cursor asks you to sign in to Tella the first time it uses a Tella tool.
 
+## Antigravity plugin
+
+The same repository is also the Tella plugin for Google Antigravity, with the same skills and the same Tella MCP server. Install it from GitHub in the Antigravity CLI:
+
+```bash
+agy plugin install https://github.com/tellahq/skills
+```
+
+Plugins installed with `agy` also show in the Antigravity App under Customizations > Installed. Antigravity asks you to sign in to Tella in your browser the first time the Tella server connects.
+
 ## What the plugins connect to
 
-Both plugins add one remote MCP server, `tella`, at `https://api.tella.com/mcp` (Streamable HTTP, signed in with your Tella account over OAuth). There are no hooks or local servers. One skill, `tella-audio-sync`, includes a Python script, kept as text in the skill's Markdown, that the agent writes out and runs on your machine when you ask it to fix lip sync: it downloads short clips of your camera recording from Tella and measures them locally, after installing `mediapipe` 1.2.2, `scipy` 1.16.3 and `numpy` 2.3.5 (plus their dependencies) from PyPI and downloading version 1 of MediaPipe's face landmark model from Google (`storage.googleapis.com/mediapipe-models/face_landmarker/face_landmarker/float16/1/face_landmarker.task`, checked against its SHA-256 before use). Every other skill is instructions only.
+Every plugin adds one remote MCP server, `tella`, at `https://api.tella.com/mcp` (Streamable HTTP, signed in with your Tella account over OAuth). There are no hooks or local servers. One skill, `tella-audio-sync`, includes a Python script, kept as text in the skill's Markdown, that the agent writes out and runs on your machine when you ask it to fix lip sync: it downloads short clips of your camera recording from Tella and measures them locally, after installing `mediapipe` 1.2.2, `scipy` 1.16.3 and `numpy` 2.3.5 (plus their dependencies) from PyPI and downloading version 1 of MediaPipe's face landmark model from Google (`storage.googleapis.com/mediapipe-models/face_landmarker/face_landmarker/float16/1/face_landmarker.task`, checked against its SHA-256 before use). Every other skill is instructions only.
 
-When Claude or Cursor calls a Tella tool, the tool's inputs (such as a video or clip id, a time range, overlay text or a script) go to Tella, and Tella returns data from the videos your account can open: titles, transcripts, timelines, frames, previews and analytics. Edits change your videos in Tella. Nothing is sent anywhere else. Tella handles that data under its [privacy policy](https://www.tella.com/legal/privacy-policy).
+When Claude, Cursor or Antigravity calls a Tella tool, the tool's inputs (such as a video or clip id, a time range, overlay text or a script) go to Tella, and Tella returns data from the videos your account can open: titles, transcripts, timelines, frames, previews and analytics. Edits change your videos in Tella. Nothing is sent anywhere else. Tella handles that data under its [privacy policy](https://www.tella.com/legal/privacy-policy).
 
 ## Skills
 
