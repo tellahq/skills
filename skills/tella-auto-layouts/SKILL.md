@@ -51,7 +51,7 @@ Useful changes, in the MCP's vocabulary (the `add_layout` schema lists what each
 
 - **Screen focus** (`screen-only`, or the bubble shrunk to size S): dense UI, code, settings or a result that needs full attention. Often 2–8 s, and longer while the detail is being worked through.
 - **Camera cutaway** (`camera-only` with `style: fullscreen`): a strong human moment while the screen is quiet. Usually 2–5 s.
-- **Punch-in** (`camera-only` with `punchIn: true`): the strongest words of a cutaway or an opening hook. At least 1.5 s, ideally 2–4 s.
+- **Punch-in** (`camera-only` with `punchIn: true`; on a camera clip, which has no `camera-only`, `fullscreen` with `style: "stretch"`): the strongest words of a cutaway or an opening hook. At least 1.5 s, ideally 2–4 s.
 - **Bubble size accent** (the same `camera-bubble` at size L, then back to the base): commentary or a reaction while the screen still matters.
 - **Split or presenter** (`side-by-side`, `tv-presenter`): a stretch where both the speaker and a slide or page matter. Avoid them for small text or code.
 
