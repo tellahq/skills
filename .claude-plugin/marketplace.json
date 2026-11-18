@@ -2,7 +2,7 @@
   "name": "tella",
   "description": "Tella's plugin for editing Tella videos with Claude.",
   "owner": {
-    "name": "Tella HQ, Inc",
+    "name": "Tella HQ Inc.",
     "url": "https://www.tella.com"
   },
   "plugins": [
