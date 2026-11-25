@@ -30,7 +30,7 @@ Cut first, lay out last. The layout switches hide the jump cuts that cutting lea
    - `breakUpMonologues` (default on): break up a long single shot with a wide shot of everyone or a punch-in.
    - `coverJumpCuts` (default on): hide jump cuts with layout switches, moving a nearby switch onto the cut or going wide on it.
    - `punchIns` (default on): hide jump cuts with punch-ins on the guest's camera. Independent of `coverJumpCuts`.
-3. **Apply it** with `apply_speaker_layouts`. If it says speech detection is still processing, wait a little and call it again. Its other errors name what the clip lacks; report them rather than laying the clip out by hand.
+3. **Apply it** with `apply_speaker_layouts`. If it says speech detection is still processing, call it again at most twice more. If it is still processing then, stop: tell the user speech detection hasn't finished for this clip and to ask again in a few minutes, and don't lay the clip out by hand. Its other errors name what the clip lacks; report them rather than laying the clip out by hand.
 4. **Check it.** The answer lists every shot with its time and why it was chosen. Run `get_clip_frame` in the middle of a few shots, including a `Speaking` shot of each person and an `everyone` shot, and check that the person talking is the one on screen.
 5. **Report** in a few lines: the pacing, how many shots, how the time splits between the speakers, and anything to look at.
 
