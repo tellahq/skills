@@ -2,7 +2,7 @@
 
 [![skills.sh](https://skills.sh/b/tellahq/skills)](https://skills.sh/tellahq/skills)
 
-[Agent Skills](https://agentskills.io) for working with [Tella](https://www.tella.com) videos from Claude Code, Codex, Cursor, and any other skills-compatible agent.
+[Agent Skills](https://agentskills.io) for working with [Tella](https://www.tella.com) videos from Claude Code, Codex, Cursor, Antigravity, and any other skills-compatible agent.
 
 ```bash
 npx skills add tellahq/skills
@@ -24,11 +24,21 @@ In claude.ai and Cowork, install it from the plugin directory, then connect Tell
 
 The same repository is the Tella plugin for Cursor, with the same skills and the same Tella MCP server. Install it from the Cursor Marketplace, or try it before it's listed by copying this repository into `~/.cursor/plugins/local/tella` and reloading Cursor. Cursor asks you to sign in to Tella the first time it uses a Tella tool.
 
+## Antigravity plugin
+
+The same repository is also the Tella plugin for Google Antigravity, with the same skills and the same Tella MCP server. Install it from GitHub in the Antigravity CLI:
+
+```bash
+agy plugin install https://github.com/tellahq/skills
+```
+
+Plugins installed with `agy` also show in the Antigravity App under Customizations > Installed. Antigravity asks you to sign in to Tella in your browser the first time the Tella server connects.
+
 ## What the plugins connect to
 
-Both plugins add one remote MCP server, `tella`, at `https://api.tella.com/mcp` (Streamable HTTP, signed in with your Tella account over OAuth). It runs no code on your machine: there are no hooks, scripts or local servers, only the skills' instructions and that server.
+Every plugin adds one remote MCP server, `tella`, at `https://api.tella.com/mcp` (Streamable HTTP, signed in with your Tella account over OAuth). There are no hooks or local servers. One skill, `tella-audio-sync`, includes a Python script, kept as text in the skill's Markdown, that the agent writes out and runs on your machine when you ask it to fix lip sync: it downloads short clips of your camera recording from Tella and measures them locally, after installing `mediapipe` 1.2.2, `scipy` 1.16.3 and `numpy` 2.3.5 (plus their dependencies) from PyPI and downloading version 1 of MediaPipe's face landmark model from Google (`storage.googleapis.com/mediapipe-models/face_landmarker/face_landmarker/float16/1/face_landmarker.task`, checked against its SHA-256 before use). Every other skill is instructions only.
 
-When Claude or Cursor calls a Tella tool, the tool's inputs (such as a video or clip id, a time range, overlay text or a script) go to Tella, and Tella returns data from the videos your account can open: titles, transcripts, timelines, frames, previews and analytics. Edits change your videos in Tella. Nothing is sent anywhere else. Tella handles that data under its [privacy policy](https://www.tella.com/legal/privacy-policy).
+When Claude, Cursor or Antigravity calls a Tella tool, the tool's inputs (such as a video or clip id, a time range, overlay text or a script) go to Tella, and Tella returns data from the videos your account can open: titles, transcripts, timelines, frames, previews and analytics. Edits change your videos in Tella. Nothing is sent anywhere else. Tella handles that data under its [privacy policy](https://www.tella.com/legal/privacy-policy).
 
 ## Skills
 
@@ -67,6 +77,12 @@ Tighten a Tella video in one go: cut recording mistakes, filler words and silent
 Turn a video into a vertical Short, Reel or TikTok: pick its strongest 15 to 60 seconds, make a trimmed 9:16 copy, tighten it, add captions, and lay it out at Shorts pace with a hook up front, B-roll that moves and the speaker on screen. It shows a scene-by-scene plan first.
 
 > Example prompt: `/tella-short Make a Short from the best part of my latest video`
+
+### `tella-audio-sync`
+
+Fix a voice that's out of sync with the speaker's lips: a Python script in the skill measures how far the voice is ahead or behind on short downloads of the camera recording, timing every moment the lips part against the voice, and the skill moves the clip's voice by that much. It needs an agent that can run Python (Claude Code, Codex, Cursor, the Tella editor). Audio sync is in beta and not available in every workspace.
+
+> Example prompt: `/tella-audio-sync The audio is a bit behind my lips in my latest video, can you fix it?`
 
 ### `tella-plan-video`
 
